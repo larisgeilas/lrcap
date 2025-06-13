@@ -45,7 +45,7 @@ jobs:
           echo "/usr/local/go/bin" >> $GITHUB_PATH
 
       - name: Clone lrcap-reports
-        run: git clone https://bikebishop:${{ secrets.LR_REPORTS_PAT }}@github.com/bikebishop/lrcap-reports.git ../lrcap-reports
+        run: git clone https://larisgeilas:${{ secrets.LR_REPORTS_PAT }}@github.com/larisgeilas/lrcap-reports.git ../lrcap-reports
 
 
       - name: Setup GitHub Pages
