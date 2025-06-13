@@ -70,7 +70,7 @@ Toks skaičiavimas tinka įsivertinti finansinei padėčiai pradžioje.
 
 ## Kaip *Portfolio* skaičiuos kapitalą?
 
-Asmeninis [**Portfolio**](https://longride.lt/portfolio/) įrankis, kurį sukūriau, skaičiuos kapitalą **Dabartinio (rinkos) turto** metodu.
+Asmeninis [**Portfolio**](/portfolio/)  įrankis, kurį sukūriau, skaičiuos kapitalą **Dabartinio (rinkos) turto** metodu.
 
 > **Dabartinis Grynasis Turtas = Pradinis turtas (EUR) + Dabartinis rinkos prieaugis (EUR) – Dabartiniai įsipareigojimai (EUR)**
 
@@ -98,7 +98,7 @@ Vis dėlto neverta per daug džiaugtis – kapitalas skaičiuojamas **realiu lai
 
 Tai – tik **laikinas (popierinis) svyravimas**, kol turtas dar nėra realizuotas.
 
-💡 Kviečiu visus užsukti į mano [**portfelį**](https://longride.lt/portfolio/) – jį tobulinsiu ir plėsiu laikui bėgant.
+💡 Kviečiu visus užsukti į mano [**portfelį**](/portfolio/) – jį tobulinsiu ir plėsiu laikui bėgant.
 
 **Ačiū, kad skaitote – susitiksime long ride’e!**
 
