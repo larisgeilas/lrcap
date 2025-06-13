@@ -40,6 +40,8 @@
 
 
     <main>
+      {{ $widget := resources.Get "js/widgets.jsx" | js.Build (dict "JSX" "automatic" "JSXImportSource" "preact") }}
+      <script src="{{ $widget.RelPermalink }}"></script>
       {{ block "main" . }}{{ end }}
     </main>
 

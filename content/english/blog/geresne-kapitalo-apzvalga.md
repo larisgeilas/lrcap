@@ -17,7 +17,7 @@ twitter_card: "summary_large_image"
 twitter_image: "/images/post2/portfolioimage.jpg"
 ---
 
-## Geriems tikslams – geri įrankiai
+# Geriems tikslams – geri įrankiai
 
 Praėjo šiek tiek laiko nuo mano pirmo įrašo. Susigulėjo mintys, ką ir kaip noriu daryti. 
 
@@ -37,7 +37,7 @@ Nauja šio tinklaraščio rubrika – [**Portfelis**](https://longride.lt/portfo
 
 Tai realiu laiku iš IBKR, bankų, asmeninės apskaitos įrankio GnuCash bei įvairių keityklų traukiamų duomenų **agregatorius**, kuris **rodo dabartinę finansinę būseną bei išlaidas**.
 
-{{< image src="images/post2/portfolio.png" caption="" alt="Portfolio įrankio ekranas" height="" width="" position="center" command="fill" option="q100" class="img-fluid" title="Portfolio įrankis asmeniniams finansams" webp="false" >}}
+{{< goal-expense >}}
 
 Aš, kaip ir jūs, galėsite **sekti mano progresą** vizualiai. Šį įrankį naudosiu ir savo įrašuose.
 

@@ -17,7 +17,7 @@ twitter_card: "summary_large_image"
 twitter_image: "/images/gallery/kapitalas.jpg"
 ---
 
-## 📌 Įvadas: Kodėl rašau šį blogą?
+# 📌 Įvadas: Kodėl rašau šį blogą?
 
 Kas pasikeistų tavo gyvenime, jei rytoj turėtum 300 000 eurų? Šiame įraše pasidalinsiu savo asmeniniu finansiniu auditu – kuo remiuosi, kaip tai darau ir kodėl tai svarbu.
 

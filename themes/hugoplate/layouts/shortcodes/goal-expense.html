@@ -1,0 +1,13 @@
+<div id="goal-expense-{{ .Ordinal }}" class="goal-expense-container"></div>
+
+<script type="module">
+  document.addEventListener('DOMContentLoaded', function () {
+    const goalEl = document.getElementById('goal-expense-{{ .Ordinal }}');
+    if (window.preact && window.GoalExpense && goalEl) {
+      window.preact.render(
+        window.preact.createElement(window.GoalExpense),
+        goalEl
+      );
+    }
+  });
+</script>

@@ -1,6 +1,5 @@
 import { h } from "preact";
 import { render } from "preact";
-import * as expensesDataSummary from "../reports-widgets-data/pl-report-summary.json";
 import * as investmentPortfolioData from "../reports-widgets-data/investment-portfolio.json";
 import { ExpenseTimeline } from "./components/expenses-timeline";
 import { GoalNetWorth } from "./components/goal-net-worth";
@@ -19,7 +18,7 @@ const speculationAccData = stocksData.growth.ibkr[speculationAccKey];
 const mainAccData = stocksData.growth.accountsGrowth[mainAccKey];
 const mergedOpenPositions = [ ...mainAccStocksData.openPositions, ...speculationAccData.openPositions ]
 const mergedStockPositions = { openPositions: mergedOpenPositions }
-
+console.log(assetClassesData)
 const PortfolioApp = () => {
 
   return (
@@ -63,10 +62,15 @@ const PortfolioApp = () => {
       </style>
       <div className="responsive-grid-2">
         <div>
-          <GoalNetWorth data={goalNetWorthData}/>
+          <GoalNetWorth />
         </div>
         <div >
-          <ExpenseTimeline data={expensesDataSummary.default} />
+          <ExpenseTimeline />
+        </div>
+      </div>
+      <div className="responsive-grid-1">
+        <div>
+          <AssetClasses />
         </div>
       </div>
        {/* <div className="responsive-grid-1">

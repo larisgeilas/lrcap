@@ -1,0 +1,12 @@
+<div id="asset-classes-{{ .Ordinal }}" class="asset-classes-container"></div>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', function () {
+    const mountEl = document.getElementById('asset-classes-{{ .Ordinal }}');
+    if (window.preact && window.AssetClasses && mountEl) {
+      window.preact.render(
+        window.preact.createElement(window.AssetClasses),
+        mountEl
+      );
+    }
+  });
+</script>

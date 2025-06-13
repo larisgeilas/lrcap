@@ -1,7 +1,9 @@
 import { h } from 'preact';
 import { useEffect, useRef } from 'preact/hooks';
 import { formatCurrency } from '../../utils';
+import * as investmentPortfolioData from "../../../reports-widgets-data/investment-portfolio.json";
 
+const goalNetWorthData = investmentPortfolioData.default.find(d => d.Account === 'Goal Net Worth');
 const translations = {
   en: {
     goalTitle: "Net Worth Goal",
@@ -129,7 +131,7 @@ const MoneyIcon = () => (
   <span style={{ fontSize: '18px' }}>💰</span>
 );
 
-export function GoalNetWorth({ data }) {
+export function GoalNetWorth({ data = goalNetWorthData }) {
   const goalAchievedPercentage = data.goalPerformance.goalAchievedPercentage;
   const currentValue = data.growth.currentValueMinusLiabilities;
   const goalValue = data.Goal;

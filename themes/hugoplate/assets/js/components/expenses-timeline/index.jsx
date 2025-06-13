@@ -1,6 +1,7 @@
 import { h } from 'preact';
 import { useState } from 'preact/hooks';
 import { AccountsMap, formatCurrency } from '../../utils';
+import * as expensesDataSummary from "../../../reports-widgets-data/pl-report-summary.json";
 
 const translations = {
   en: {
@@ -395,7 +396,7 @@ function ExpenseBar({ data, index, isHovered, onHover, onLeave }) {
   );
 }
 
-export function ExpenseTimeline({ data }) {
+export function ExpenseTimeline({ data = expensesDataSummary.default }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   if (!Array.isArray(data)) return null;
