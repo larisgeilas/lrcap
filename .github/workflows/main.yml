@@ -1,0 +1,78 @@
+name: Deploy Hugo site to Pages
+
+on:
+  push:
+    branches: ["main"]
+  repository_dispatch:
+    types: [trigger-pages-deploy]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  HUGO_ENV: production
+  HUGO_VERSION: "0.147.3"
+  GO_VERSION: "1.23.3"
+  TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
+  TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+  TINA_SEARCH_TOKEN: ${{ secrets.TINA_SEARCH_TOKEN }}
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Install Hugo
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-arm64.deb
+          sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Install Go
+        run: |
+          wget -O ${{ runner.temp }}/go.tar.gz https://dl.google.com/go/go${GO_VERSION}.linux-arm64.tar.gz
+          sudo tar -C /usr/local -xzf ${{ runner.temp }}/go.tar.gz
+          echo "/usr/local/go/bin" >> $GITHUB_PATH
+
+      - name: Clone lrcap-reports
+        run: git clone https://bikebishop:${{ secrets.LR_REPORTS_PAT }}@github.com/bikebishop/lrcap-reports.git ../lrcap-reports
+
+
+      - name: Setup GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Setup project (e.g. copying outputs)
+        run: npm run project-setup
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build site
+        run: npm run build
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04-arm
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

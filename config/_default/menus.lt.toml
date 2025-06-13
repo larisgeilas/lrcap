@@ -1,0 +1,61 @@
+############# English navigation ##############
+
+# main menu
+[[main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[main]]
+name = "Blogas"
+url = "/blog"
+weight = 2
+
+[[main]]
+name = "Apie mane"
+url = "/apie-mane"
+weight = 3
+
+
+[[main]]
+name = "Portfolio"
+url = "/portfolio"
+weight = 4
+
+
+# [[main]]
+# weight = 5
+# name = "Pages"
+
+# [[main]]
+# parent = "Pages"
+# name = "Contact"
+# url = "/contact"
+
+# [[main]]
+# parent = "Pages"
+# name = "Authors"
+# url = "/authors"
+
+# [[main]]
+# parent = "Pages"
+# name = "Categories"
+# url = "/categories"
+
+# [[main]]
+# parent = "Pages"
+# name = "404 Page"
+# url = "/404"
+
+
+# footer menu
+[[footer]]
+name = "Apie mane"
+url = "/apie-mane"
+weight = 1
+
+
+[[footer]]
+name = "Privatumo politika"
+url = "/privatumo-politika"
+weight = 2

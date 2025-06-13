@@ -1,0 +1,6 @@
+################ English language ##################
+[lt]
+languageName = "Lt"
+languageCode = "lt-lt"
+contentDir = "content/english"
+weight = 1

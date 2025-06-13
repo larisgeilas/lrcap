@@ -1,0 +1,44 @@
+{
+  "name": "hugoplate",
+  "description": "hugo tailwindcss boilerplate",
+  "version": "2.1.4",
+  "license": "MIT",
+  "author": "zeon.studio",
+  "scripts": {
+    "dev": "npm run copy-outputs && hugo server",
+    "prebuild": "npm run copy-outputs",
+    "build": "hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
+    "preview": "hugo server --disableFastRender --navigateToChanged --templateMetrics --templateMetricsHints --watch --forceSyncStatic -e production --minify",
+    "dev:example": "cd exampleSite && hugo server",
+    "build:example": "cd exampleSite && hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
+    "preview:example": "cd exampleSite && hugo server --disableFastRender --navigateToChanged --templateMetrics --templateMetricsHints --watch --forceSyncStatic -e production --minify",
+    "update-modules": "node ./scripts/clearModules.js && hugo mod clean --all && hugo mod get -u ./... && hugo mod tidy",
+    "remove-darkmode": "node ./scripts/removeDarkmode.js && yarn format",
+    "copy-outputs": "python copy-outputs.py",
+    "project-setup": "node ./scripts/projectSetup.js",
+    "theme-setup": "node ./scripts/themeSetup.js",
+    "update-theme": "node ./scripts/themeUpdate.js",
+    "format": "prettier -w ."
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.6",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
+    "prettier": "^3.5.3",
+    "prettier-plugin-go-template": "0.0.15",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4.1.6"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.9",
+    "cheerio": "^1.0.0",
+    "currency.js": "^2.0.4",
+    "fast-glob": "^3.3.3",
+    "fs-extra": "^11.3.0",
+    "lucide-react": "^0.514.0",
+    "preact": "^10.26.8",
+    "prop-types": "^15.8.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}

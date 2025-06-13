@@ -1,0 +1,34 @@
+<!-- Language List -->
+{{ if hugo.IsMultilingual }}
+  {{ $class := .Class }}
+  {{ $context := .Context }}
+  {{ $pageLang := $context.Lang }}
+  {{ $pageTranslations := newScratch }}
+
+  {{ range site.Home.AllTranslations }}
+    {{ $pageTranslations.Set .Language.Lang .Permalink }}
+  {{ end }}
+
+  {{ range $context.AllTranslations }}
+    {{ $pageTranslations.Set .Language.Lang .Permalink }}
+  {{ end }}
+
+
+  <select class="{{ $class }}" onchange="location = this.value">
+    {{ range site.Languages }}
+
+      {{ $link := $pageTranslations.Get .Lang }}
+      {{ if $link }}
+        <option
+          id="{{ .Lang }}"
+          value="{{ $link }}"
+          {{ if eq .Lang $pageLang }}
+            selected
+          {{ end }}>
+          {{ .LanguageName }}
+        </option>
+      {{ end }}
+
+    {{ end }}
+  </select>
+{{ end }}

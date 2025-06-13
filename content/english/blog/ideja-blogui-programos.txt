@@ -1,0 +1,57 @@
+
+Kaip ir visi, pamėginau Excelį, bet tai buvo toks sudėtingas ir time consuming darbas, kad greit apsigalvojau.
+
+Tada pameginau programėles, radau viena neblogą iš - [**splitwise**](https://www.splitwise.com/) - turi free versiją, galima keletą sąskaitų pririšti. Tačiau kai pabandžiau visas sąskaitas sukrauti į vieną paskyrą, gavosi taip kad nebegalėjau atsekti galų. Galbūt įmanoma, bet jeigų tarp sąskaitų darai pavedimus tai tas galutinis rezultatas neteisingai išsiskaičiuoja ir tenka hackinti. Kitokio turto negu pinigai sąskaitose apskaitymas neįmanomas (bent jau tuo metu kai bandžiau). Taip pat apie sudėtines transakcijas, lizinginius pirkimus ir pan. šitų dalykų splitwise neradau, kaip pasidaryti. Ir šiaip, apskaitai vykdyti vis dar reikia kompiuterio, patogaus valdymo, mobilios aplikacijos apskaitai netinka (mano nuomonė).
+
+Pradėjau ieškoti kažko rimčiau, apskaitos programos. Pagrinde open source, nenoriu mokėti dar 100-200 eurų per metus už tai, kad dirbčiau apskaitininko darbą, tą sumą geriau investuočiau. Radau tokia neblogą open-source programą [**FireFlyIII**](https://www.firefly-iii.org/). Pralaeidau savaitę kol susikonfigūravau, pasileidau ją lokaliame namų tinkle preinamą iš telefonų ir kitų pc. Pasidariau taisykles transakcijom importuoti. Vienintelis minusas, kad turi nusikrauti iš visų sąskaitų transakcijas ir uploadinti rankom, bet visa kita pagal taisykles sudėlioja. Kaip ir būtų viskas gerai, bet tas transakcijų užkrovimo variklis vis užstrigdavo arba pridublikuodavo, gal dėl to kad už keletą metų transakcijas kraudavau. Visgi nesugebėjau pasidaryti visko ko norėjau, bet funkcionalumų ten tikrai netrūko. Manau jog ilgiau pasiknaisiojus ir turint kantrybės ji veiktų puikiai.
+
+Persižiūrėjau dar keletą kitų programų, cloud produktų, aplikacijų, didžioji dalis jų mokamų ir neaišku ką gauni, gali būti naudosi, bandysi visą savaitę tvarkysi tas išlaidas, taisykles rašysiesi ir kokios nors funkcijos nebus, teks vėl pradėti iš naujo. Integracijų su mūsų lietuviškais bankais beveik nei viena aplikacija neturi, o jei turi tai ne su visais, o jei turi su visais tai reikes po 10 authentifikacijų padaryti su mobiliu parašu, kad per open banking protokolą viską nusikrauti.
+
+Taigi radau tokia programą seną [GnuCash](https://en.wikipedia.org/wiki/GnuCash) - dedu wiki linką nes čia dinozauras. Backend'e naudojama perl programinė kalba, gal kas dar tokią girdėjęs, open-source, daug moduliu, galimybės kustomizuoti beribės, didelis naudotojų skaičius, net ir šiais laikais. Mano nuostabai, absoliučiai viskas ko reikia apskaitai vykdyti. Netgi daugiau, yra integracijų su yahoo ir kitom platformom, visokių builtin reportų. Pasiskaičiau dar šiek tiek apie šitą programą - kai kurie maži verslai, buhalteriai JAV net ir šiais laikais naudoja šią programą apskaitai - tai daug ką pasako. Programa sena, bet labai patikima.
+
+### Apie GnuCash
+
+Galima pasirinkti sąskaitų templeitus sudėtingesnius, net verslų apskaitoms yra templeitų. Aš pasiemiau standartinį šeimos templeitą. Transkacijas reikia sukrauti rankomis iš CSV failų, bet viskas labai paprasta, lengva. Galimos įvairios turto klasės, kurių apskaita skiriasi. Visa apskaitos logika aprašyta ir gerai dokumentuota.
+
+Tarkim, noriu turėti turto - būstą ir matyti kiek sumoku palukanų, kiek liko išmokėti, kokia turto vertė - viską lengvai galima susikonfiguruoti pagal tokios turto klasės apskaitos taisykles.
+
+Labai patinka funkcija **Split transactions**, kuri leidžia apskaityti sudėtingus pirkimus akcijas, pirkimus su svertu ir pan. Veikia su skirtingomis valiutomis.
+
+Žodžiu, nič nieko neišmanau apie apskaitą, bet susinventorizavus asmeninius finansus, fainai viską susitygavus, susižiūrėjus, supratau kaip tai užknisa. Užtat naudinga, net labai.
+
+Iš visų programų programėlių pasirinkau seną laiko išbandytą, negražią **GnuCash**, kuri puikiai veikia, yra nemokama ir pilnai kustomizuojama. Ją naudosiu išlaidom vesti ir portfeliui trackinti.
+
+
+
+
+### Kaip priklauso - NT first
+
+Apibendrinant visas mano net worth (kapitalas) 2025-06-03 yra **301 195.68 Eur**.
+
+{{< image src="images/post1/assets.png" caption="" alt="alter-text" height="" width="" position="center" command="fill" option="q100" class="img-fluid" title="Kapitalas"  webp="false" >}}
+
+Taip atrodo kapitalo kitimas per laiką nuo 2024-01-01. Transakcijų kiekis sąskaitose toks didelis, kad seniau negu 2024 nenusikėliau. Visas sąskaitas GnuCash leido atidaryti su Opening Balance sheetais paprastesniam skaičiavimui. Prie fixed assets matosi didelis padidėjimas nuo 2024, bet tai yra fiktyvu, nes negaliu nusikelti į tuos laikus kada pirkau nekilnojamą turtą bei automobilį. Įdomu tai, kad šiame grafike galite pamatyti nuo kada pradėjau investuoti 2025-01-01. Certs of deposits (taupomieji indėliai) taip pat parodyti tik nuo 2025 metų, realiai pinigus ten dėjau ir seniau, bet apskaičiau tik nuo 2025. Current Assets - tai grynieji, kurių nemaža dalis nuėjo į ivenstments.
+
+| Kategorija                       | Procentai |
+| ---------------------------- | :-----------------: |
+| NT  |       67.60 %       |
+| Grynieji    |       4.10 %        |
+| Indėliai |       13.30 %       |
+| Investicijos                |       15.10 %       |
+
+### Investuotas kapitalas
+
+Kaip Tautvydas Marčiulaitis yra sakęs, nuosavą gyvenamąjį būstą reikia traukti į savo net worth, tačiau nereikia jo traukti į investicijų krepšęlį. Taigi bendras investicijų krepšelis yra mažesnis.
+
+| Investuotas kapitalas                 | Vertė              | Procentinė išraiška |
+| ------------------------------------- | ------------------ | :-----------------: |
+| Kitas NT                              | 27 000 Eur         |       21.66 %       |
+| Cash (Indėliai + Gryni)               | 52 243.02 Eur      |       41.91 %       |
+| Investuotas kapitalas (ir III pakopa) | 45 399.26 Eur      |       36.43 %       |
+| **Viso**                              | **124 642.28 Eur** |        100 %        |
+
+Šiek tiek apie NT. Faktas kad NT yra pakilęs ir lyginant nuo to, kada nupirkau, vertės pokytis yra apie 15% per metus. Džiaugiuosi NT pirkiniais ir ypač todėl kad nusipirkau prieš Covid. Su dabartine turima grynūjų suma irgi galvojau apie investavimą į NT, pirkti su paskola. Netpati mažiausia rizika prarasti absoliučiai visą invetuota sumą mane atbaido nuo papildomų investicijų į nekilnojamą turtą.
+
+Šeimos reikmėms turiu manau pakankamai pinigų (metų pagalvę).
+
+Investuotas kapitalas tai yra pinigai kurie jau nukeliavę į investicines sąskaitas, kaip jiems sekasi pažiūrėsime vėliau.

@@ -1,0 +1,23 @@
+{{ define "main" }}
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          <div class="content">
+            {{ .Content }}
+            <div id="portfolio"></div>
+            {{ $shims := dict }}
+            {{ $defines := dict }}
+            {{ if  hugo.IsDevelopment }}
+              {{ $defines = dict "process.env.NODE_ENV" `"development"` }}
+            {{ else }}
+              {{ $shims = dict "react" "js/shims/react.js"  "react-dom/client" "js/shims/react-dom.js" }}
+            {{ end }}
+            {{ $js := resources.Get "js/portfolio.jsx" | js.Build (dict "JSX" "automatic" "JSXImportSource" "preact") }}
+            <script src="{{ $js.RelPermalink }}"></script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}
