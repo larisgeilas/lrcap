@@ -3,7 +3,7 @@ title: "Kaip dar geriau siekti kapitalo prieaugio"
 meta_title: "Kaip siekti kapitalo prieaugio – mano investavimo portfelio apžvalga"
 description: "Tai įrašas apie mano portfelį, kaip sieksiu finansinių tikslų"
 date: 2025-06-12T09:00:00Z
-image: "/images/post2/portfolioimage.jpg"
+image: "/images/post2/portfolioImage.jpg"
 slug: "kapitalo-apzvalga"
 categories: ["Asmeniniai Finansai"]
 author: "SaddleBishop"
@@ -14,7 +14,7 @@ draft: false
 og_title: "Kaip dar geriau siekti kapitalo prieaugio"
 og_description: "Tai įrašas apie mano portfelį, kaip sieksiu finansinių tikslų"
 twitter_card: "summary_large_image"
-twitter_image: "/images/post2/portfolioimage.jpg"
+twitter_image: "/images/post2/portfolioImage.jpg"
 ---
 
 # Geriems tikslams – geri įrankiai
@@ -33,7 +33,7 @@ Pirmasis skaičius, kurį parašiau, buvo **50 000 000 EUR** – bet čia 
 
 ## Kas čia bus?
 
-Nauja šio tinklaraščio rubrika – [**Portfelis**](https://longride.lt/portfolio/).
+Nauja šio tinklaraščio rubrika – [**Portfelis**](/portfolio).
 
 Tai realiu laiku iš IBKR, bankų, asmeninės apskaitos įrankio GnuCash bei įvairių keityklų traukiamų duomenų **agregatorius**, kuris **rodo dabartinę finansinę būseną bei išlaidas**.
 
@@ -45,7 +45,7 @@ Aš, kaip ir jūs, galėsite **sekti mano progresą** vizualiai. Šį įrankį n
 
 ## Grįžtam prie kapitalo – tai koks jis?
 
-Savo įraše apie [asmeninio kapitalo auditą](https://longride.lt/blog/asmeninis-kapitalas/) pastebėjau, kad suskaičiavau tik **Pradinį Grynąjį Turtą** – tai turto vertė, kuri neįskaičiuoja dabartinės rinkos vertės.
+Savo įraše apie [asmeninio kapitalo auditą](/blog/asmeninis-kapitalas) pastebėjau, kad suskaičiavau tik **Pradinį Grynąjį Turtą** – tai turto vertė, kuri neįskaičiuoja dabartinės rinkos vertės.
 
 Tačiau suagregavus duomenis man pavyko nustatyti, kad dabartinis **Grynasis kapitalas (Current Net Worth)** yra **393 958,96 EUR**.
 
