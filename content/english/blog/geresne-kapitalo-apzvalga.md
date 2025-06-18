@@ -45,7 +45,7 @@ Aš, kaip ir jūs, galėsite **sekti mano progresą** vizualiai. Šį įrankį n
 
 ## Grįžtam prie kapitalo – tai koks jis?
 
-Savo įraše apie [asmeninio kapitalo auditą](/blog/asmeninis-kapitalas) pastebėjau, kad suskaičiavau tik **Pradinį Grynąjį Turtą** – tai turto vertė, kuri neįskaičiuoja dabartinės rinkos vertės.
+Savo įraše apie [asmeninio kapitalo auditą](/blog/asmeninio-kapitalo-auditas) pastebėjau, kad suskaičiavau tik **Pradinį Grynąjį Turtą** – tai turto vertė, kuri neįskaičiuoja dabartinės rinkos vertės.
 
 Tačiau suagregavus duomenis man pavyko nustatyti, kad dabartinis **Grynasis kapitalas (Current Net Worth)** yra **393 958,96 EUR**.
 
