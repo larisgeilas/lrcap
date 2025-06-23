@@ -1,10 +1,15 @@
-<div id="asset-classes-{{ .Ordinal }}" class="asset-classes-container"></div>
+<div
+  id="asset-classes-{{ .Ordinal }}"
+  class="asset-classes-container"
+  data-json-url="{{ printf "reports-widgets-data/investment-portfolio/investment-portfolio-%s.json" (.Get "date") | relURL }}"
+></div>
 <script type="module">
   document.addEventListener('DOMContentLoaded', function () {
     const mountEl = document.getElementById('asset-classes-{{ .Ordinal }}');
+    const jsonUrl = mountEl.dataset.jsonUrl;
     if (window.preact && window.AssetClasses && mountEl) {
       window.preact.render(
-        window.preact.createElement(window.AssetClasses),
+        window.preact.createElement(window.AssetClasses, { jsonUrl }),
         mountEl
       );
     }

@@ -31,7 +31,8 @@ Taip priėjau prie išvados, kad reikia sukategorizuoti visas metrikas, kurias g
 
 ### Turto balanso struktūra
 
-{{< asset-classes >}}
+{{< asset-classes date="2025-06-13" >}}
+
 
 Analizuodamas savo turto balansą, pastebėjau keletą svarbių dalykų. Pirmiausia – didelė dalis mano turto yra sutelkta į nekilnojamąjį turtą (NT), kuris sudaro daugiau nei pusę viso portfelio vertės. Nors NT generavo didelį popierinį prieaugį, tokia koncentracija reiškia padidėjusią riziką, ypač ekonominio nuosmukio ar palūkanų šuolio atveju. Be to, NT yra mažiau likvidus, todėl krizės metu jį realizuoti būtų sunkiau nei, tarkime, ETF ar indėlius.
 

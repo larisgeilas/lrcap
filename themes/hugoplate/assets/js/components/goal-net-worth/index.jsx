@@ -2,6 +2,7 @@ import { h } from 'preact';
 import { useEffect, useRef } from 'preact/hooks';
 import { formatCurrency } from '../../utils';
 import * as investmentPortfolioData from "../../../reports-widgets-data/investment-portfolio.json";
+import { useMediaQuery } from '../../media-query';
 
 const goalNetWorthData = investmentPortfolioData.default.find(d => d.Account === 'Goal Net Worth');
 const translations = {
@@ -90,7 +91,7 @@ function DonutChart({ percentage, size = 160 }) {
         textAlign: 'center'
       }}>
         <div style={{
-          fontSize: '28px',
+          fontSize: size == 90 ? '20px' : '28px',
           fontWeight: 'bold',
           color: '#111827',
           lineHeight: '1'
@@ -252,6 +253,8 @@ export function GoalNetWorth({ data = goalNetWorthData }) {
     color: isGoalAchieved ? '#065f46' : '#92400e'
   };
 
+  const isSmall = useMediaQuery('(max-width: 600px)');
+
   return (
     <div 
       style={containerStyle}
@@ -290,7 +293,7 @@ export function GoalNetWorth({ data = goalNetWorthData }) {
       <div style={contentStyle}>
         {/* Chart */}
         <div style={chartContainerStyle}>
-          <DonutChart percentage={goalAchievedPercentage} />
+          <DonutChart percentage={goalAchievedPercentage} size={isSmall ? 90 : 160} />
         </div>
 
         {/* Info cards */}

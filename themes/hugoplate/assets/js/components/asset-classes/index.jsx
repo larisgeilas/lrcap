@@ -1,4 +1,5 @@
 import { h } from 'preact';
+import { useEffect, useState } from 'preact/hooks';
 import { formatCurrency, AccountsMap } from '../../utils';
 import * as investmentPortfolioData from "../../../reports-widgets-data/investment-portfolio.json";
 const assetClassesData = investmentPortfolioData.default.filter(item => item.Account !== 'Goal Net Worth' && item.Account !== 'Total');
@@ -123,7 +124,26 @@ const getAssetIcon = (account) => {
   return iconMap[account] || h(Wallet, { className: "w-5 h-5 text-gray-600" });
 };
 
-export function AssetClasses({ data = assetClassesData }) {
+export function AssetClasses({ d = assetClassesData, jsonUrl = null }) {
+
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch(jsonUrl)
+      .then(res => {
+        if (!res.ok) setData(d)
+        return
+      })
+      .then(raw => {
+        // filter out unwanted accounts
+        setData(raw.filter(item =>
+          item.Account !== 'Goal Net Worth' && item.Account !== 'Total'
+        ));
+      })
+      .catch(console.error);
+  }, [jsonUrl]);
+
+  if (!data) return <div>Loading…</div>;
   const totalNetWorthObject = data.find(item => item.Account === "Current Total Net Worth");
 
   const getRoiStyle = (roi) => ({

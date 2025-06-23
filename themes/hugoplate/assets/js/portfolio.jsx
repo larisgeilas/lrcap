@@ -6,6 +6,7 @@ import { GoalNetWorth } from "./components/goal-net-worth";
 import { CurrentNetWorth } from "./components/current-net-worth-info";
 import { AssetClasses } from "./components/asset-classes";
 import Stocks from "./components/stocks";
+// import TreemapOpenPositions from "./treempa-stocks-new";
 
 const goalNetWorthData = investmentPortfolioData.default.find(d => d.Account === 'Goal Net Worth');
 const currentNetWorthData = investmentPortfolioData.default.find(d => d.Account === 'Current Total Net Worth')
@@ -18,7 +19,7 @@ const speculationAccData = stocksData.growth.ibkr[speculationAccKey];
 const mainAccData = stocksData.growth.accountsGrowth[mainAccKey];
 const mergedOpenPositions = [ ...mainAccStocksData.openPositions, ...speculationAccData.openPositions ]
 const mergedStockPositions = { openPositions: mergedOpenPositions }
-console.log(assetClassesData)
+
 const PortfolioApp = () => {
 
   return (
@@ -56,8 +57,10 @@ const PortfolioApp = () => {
             .responsive-grid-3,
             .responsive-grid-3-2,
             .responsive-grid-2 {
-              grid-template-columns: 1fr;
+              grid-template-columns: repeat(1, minmax(0, 1fr));
+              padding: 0 1rem;
             }
+          }
         `}
       </style>
       <div className="responsive-grid-2">
@@ -73,6 +76,9 @@ const PortfolioApp = () => {
           <AssetClasses />
         </div>
       </div>
+      {/* <div>
+        <TreemapOpenPositions />
+      </div> */}
        {/* <div className="responsive-grid-1">
          <div>
           <Stocks accData={stocksData} openPositions={mergedStockPositions.openPositions} />
