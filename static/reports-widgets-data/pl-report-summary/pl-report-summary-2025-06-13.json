@@ -1,0 +1,102 @@
+[
+  {
+    "label": "2024",
+    "totalRevenue": 99844.45,
+    "totalExpenses": 68325.89,
+    "netIncome": 31518.56,
+    "totalExpensePercentage": 68.43,
+    "totalExpenseGoal": 50,
+    "topExpenses": [
+      {
+        "expenseName": "Travel",
+        "expenseAmount": 8034.21
+      },
+      {
+        "expenseName": "Groceries",
+        "expenseAmount": 7868.06
+      },
+      {
+        "expenseName": "Kindergarten",
+        "expenseAmount": 6823
+      },
+      {
+        "expenseName": "Bikes",
+        "expenseAmount": 5294.66
+      },
+      {
+        "expenseName": "Mortgage Loan",
+        "expenseAmount": 4855.29
+      },
+      {
+        "expenseName": "Car Loan",
+        "expenseAmount": 4749.66
+      },
+      {
+        "expenseName": "Dining",
+        "expenseAmount": 4150.56
+      },
+      {
+        "expenseName": "Clothes",
+        "expenseAmount": 3642.28
+      },
+      {
+        "expenseName": "Medical Expenses",
+        "expenseAmount": 3228.11
+      },
+      {
+        "expenseName": "Fuel",
+        "expenseAmount": 2935.43
+      }
+    ]
+  },
+  {
+    "label": "ytd",
+    "totalRevenue": 58041.08,
+    "totalExpenses": 33709.27,
+    "netIncome": 24331.81,
+    "totalExpensePercentage": 58.08,
+    "totalExpenseGoal": 50,
+    "topExpenses": [
+      {
+        "expenseName": "Travel",
+        "expenseAmount": 10905.48
+      },
+      {
+        "expenseName": "Kindergarten",
+        "expenseAmount": 3446
+      },
+      {
+        "expenseName": "Groceries",
+        "expenseAmount": 3348.05
+      },
+      {
+        "expenseName": "Clothes",
+        "expenseAmount": 2098.17
+      },
+      {
+        "expenseName": "Car Loan",
+        "expenseAmount": 2024.45
+      },
+      {
+        "expenseName": "Supplies",
+        "expenseAmount": 1752.93
+      },
+      {
+        "expenseName": "Mortgage Loan",
+        "expenseAmount": 1614.42
+      },
+      {
+        "expenseName": "Dining",
+        "expenseAmount": 1525.39
+      },
+      {
+        "expenseName": "Fuel",
+        "expenseAmount": 1127.01
+      },
+      {
+        "expenseName": "Childcare",
+        "expenseAmount": 1000.93
+      }
+    ]
+  }
+]

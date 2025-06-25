@@ -1,14 +1,15 @@
 import { h } from 'preact';
-import { useEffect, useRef } from 'preact/hooks';
-import { formatCurrency } from '../../utils';
+import { useEffect, useState } from 'preact/hooks';
+import { formatCurrency, prettyDateLT } from '../../utils';
 import * as investmentPortfolioData from "../../../reports-widgets-data/investment-portfolio.json";
 import { useMediaQuery } from '../../media-query';
+import { loadInvestmentPortfolio } from '../../data-loaders';
 
 const goalNetWorthData = investmentPortfolioData.default.find(d => d.Account === 'Goal Net Worth');
 const translations = {
   en: {
     goalTitle: "Net Worth Goal",
-    goalSubtitle: "Net Worth Goal Progress",
+    goalSubtitle: "",
     achieved: "Achieved",
     inProgress: "In Progress",
     accumulated: "Accumulated (Current)",
@@ -20,7 +21,7 @@ const translations = {
   },
   lt: {
     goalTitle: "Kapitalo Tikslas",
-    goalSubtitle: "Grynojo turto tikslo progresas",
+    goalSubtitle: " ",
     achieved: "Pasiektas",
     inProgress: "Vykdomas",
     accumulated: "Sukaupta (Dabartinė)",
@@ -91,7 +92,7 @@ function DonutChart({ percentage, size = 160 }) {
         textAlign: 'center'
       }}>
         <div style={{
-          fontSize: size == 90 ? '20px' : '28px',
+          fontSize: size == 100 ? '20px' : '28px',
           fontWeight: 'bold',
           color: '#111827',
           lineHeight: '1'
@@ -132,12 +133,47 @@ const MoneyIcon = () => (
   <span style={{ fontSize: '18px' }}>💰</span>
 );
 
-export function GoalNetWorth({ data = goalNetWorthData }) {
+export function GoalNetWorth({ d = goalNetWorthData, date = null}) {
+  const [data, setData]     = useState(d);
+  const [loading, setLoading] = useState(false);
+  const [error, setError]   = useState(null);
+
+  useEffect(() => {
+    setError(null);
+    if (!date) {
+      setData(d);
+      return;
+    }
+    setLoading(true)
+
+    loadInvestmentPortfolio(date)
+      .then(raw => {
+        const filtered = raw.find(
+          item => item.Account === 'Goal Net Worth'
+        );
+        setData(filtered);
+      })
+      .catch(err => {
+        console.error(err);
+        // 2) Fallback to the default "d" that you imported
+        setData(d);
+        setError(err);
+      })
+      .finally(() => {
+        // 3) Always clear loading flag
+        setLoading(false);
+      });
+  }, [date, d]);
+
+  if (loading) return <div>Loading…</div>;
+  if (!data || data.length === 0) return <div>No data to display</div>;
+
   const goalAchievedPercentage = data.goalPerformance.goalAchievedPercentage;
   const currentValue = data.growth.currentValueMinusLiabilities;
   const goalValue = data.Goal;
   const remainingAmount = data.goalPerformance.requiredValue;
   const isGoalAchieved = goalAchievedPercentage >= 100;
+  const isSmall = useMediaQuery('(max-width: 600px)');
 
   const containerStyle = {
     backgroundColor: 'white',
@@ -185,13 +221,13 @@ export function GoalNetWorth({ data = goalNetWorthData }) {
     flex: '1',
     display: 'flex',
     flexDirection: 'column',
-    gap: '10px'
+    gap: isSmall ? '5px' : '10px'
   };
 
   const metricCardStyle = {
     backgroundColor: '#f9fafb',
-    borderRadius: '12px',
-    padding: '13px',
+    borderRadius: isSmall ? '6px' : '12px',
+    padding: isSmall ? '5px' :'13px',
     border: '1px solid #e5e7eb'
   };
 
@@ -209,7 +245,7 @@ export function GoalNetWorth({ data = goalNetWorthData }) {
   };
 
   const metricValueStyle = {
-    fontSize: '24px',
+    fontSize: isSmall ? '16px' : '24px',
     fontWeight: 'bold',
     color: '#111827'
   };
@@ -253,8 +289,6 @@ export function GoalNetWorth({ data = goalNetWorthData }) {
     color: isGoalAchieved ? '#065f46' : '#92400e'
   };
 
-  const isSmall = useMediaQuery('(max-width: 600px)');
-
   return (
     <div 
       style={containerStyle}
@@ -281,11 +315,11 @@ export function GoalNetWorth({ data = goalNetWorthData }) {
         </div>
         <div>
           <h2 style={titleStyle}>{t('goalTitle')}</h2>
-          <p style={subtitleStyle}>{t('goalSubtitle')}</p>
+          <p style={subtitleStyle}>{isSmall ? "" : t('goalSubtitle')} {" "} {prettyDateLT(date)}</p>
         </div>
         <div style={statusBadgeStyle}>
           <span>{isGoalAchieved ? '✅' : '⏳'}</span>
-          {isGoalAchieved ? t('achieved') : t('inProgress')}
+          {isGoalAchieved ? t('achieved') : isSmall ? '' : t('inProgress')}
         </div>
       </div>
 
@@ -293,7 +327,7 @@ export function GoalNetWorth({ data = goalNetWorthData }) {
       <div style={contentStyle}>
         {/* Chart */}
         <div style={chartContainerStyle}>
-          <DonutChart percentage={goalAchievedPercentage} size={isSmall ? 90 : 160} />
+          <DonutChart percentage={goalAchievedPercentage} size={isSmall ? 100 : 160} />
         </div>
 
         {/* Info cards */}

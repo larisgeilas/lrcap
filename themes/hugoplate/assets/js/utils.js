@@ -31,3 +31,19 @@ export const AccountsMap = {
   "Childcare": "Vaikų išlaidos", 
   "Medical Expenses": "Medicinos reikmenys", 
 };
+
+export const prettyDateLT = (iso) => {
+  // Pick either the provided date or “now”
+  const dateToFormat = iso
+    ? new Date(iso)
+    : new Date();
+
+  // Format in Lithuanian: “YYYY m. MMMM D d.”
+  return new Intl.DateTimeFormat('lt-LT', {
+    year:  'numeric',
+    month: 'long',
+    day:   'numeric'
+  }).format(dateToFormat);
+};
+
+

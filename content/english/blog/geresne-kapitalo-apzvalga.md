@@ -37,7 +37,7 @@ Nauja šio tinklaraščio rubrika – [**Portfelis**](/portfolio).
 
 Tai realiu laiku iš IBKR, bankų, asmeninės apskaitos įrankio GnuCash bei įvairių keityklų traukiamų duomenų **agregatorius**, kuris **rodo dabartinę finansinę būseną bei išlaidas**.
 
-{{< goal-expense >}}
+{{< goal-expense date="2025-06-13" >}}
 
 Aš, kaip ir jūs, galėsite **sekti mano progresą** vizualiai. Šį įrankį naudosiu ir savo įrašuose.
 

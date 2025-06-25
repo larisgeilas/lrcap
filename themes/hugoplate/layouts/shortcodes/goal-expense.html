@@ -1,11 +1,16 @@
-<div id="goal-expense-{{ .Ordinal }}" class="goal-expense-container"></div>
+<div
+  id="goal-expense-{{ .Ordinal }}"
+  class="goal-expense-container"
+  data-date="{{ .Get "date" }}"
+></div>
 
 <script type="module">
   document.addEventListener('DOMContentLoaded', function () {
     const goalEl = document.getElementById('goal-expense-{{ .Ordinal }}');
     if (window.preact && window.GoalExpense && goalEl) {
+      const date = goalEl.dataset.date;  // e.g. "2025-06-13"
       window.preact.render(
-        window.preact.createElement(window.GoalExpense),
+        window.preact.createElement(window.GoalExpense, { date }),
         goalEl
       );
     }

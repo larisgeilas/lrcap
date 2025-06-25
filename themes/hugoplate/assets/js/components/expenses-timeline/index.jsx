@@ -1,7 +1,8 @@
 import { h } from 'preact';
-import { useState } from 'preact/hooks';
-import { AccountsMap, formatCurrency } from '../../utils';
+import { useEffect, useState } from 'preact/hooks';
+import { AccountsMap, formatCurrency, prettyDateLT } from '../../utils';
 import * as expensesDataSummary from "../../../reports-widgets-data/pl-report-summary.json";
+import { loadProfitLoss } from '../../data-loaders';
 
 const translations = {
   en: {
@@ -161,7 +162,8 @@ function Tooltip({ totalExpenses, totalRevenue, netIncome, topExpenses, style })
   );
 }
 
-function ExpenseBar({ data, index, isHovered, onHover, onLeave }) {
+function ExpenseBar({data, index, isHovered, onHover, onLeave }) {
+
   const { label, totalExpensePercentage, totalExpenseGoal, totalExpenses, totalRevenue, netIncome, topExpenses } = data;
   const isOverGoal = totalExpensePercentage > totalExpenseGoal;
   
@@ -175,7 +177,7 @@ function ExpenseBar({ data, index, isHovered, onHover, onLeave }) {
     position: 'relative',
     transition: 'all 0.3s ease',
     cursor: 'pointer',
-    zIndex: isHovered ? 10 : 1
+    zIndex: isHovered ? 20 : 1
   };
 
   const headerStyle = {
@@ -396,10 +398,59 @@ function ExpenseBar({ data, index, isHovered, onHover, onLeave }) {
   );
 }
 
-export function ExpenseTimeline({ data = expensesDataSummary.default }) {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+export function ExpenseTimeline({ d = expensesDataSummary.default, date = null }) {
+  const [data, setData]     = useState(d);
+  const [loading, setLoading] = useState(false);
+  const [error, setError]   = useState(null);
+  const [canHover, setCanHover] = useState(false);
 
-  if (!Array.isArray(data)) return null;
+  useEffect(() => {
+    setError(null);
+    if (!date) {
+      setData(d);
+      return;
+    }
+    setLoading(true)
+
+    loadProfitLoss(date)
+      .then(raw => {
+        const filtered = raw.filter(item =>
+          item.Account !== 'Goal Net Worth' && item.Account !== 'Total'
+        );
+        setData(filtered);
+      })
+      .catch(err => {
+        console.error(err);
+        // 2) Fallback to the default "d" that you imported
+        setData(d);
+        setError(err);
+      })
+      .finally(() => {
+        // 3) Always clear loading flag
+        setLoading(false);
+      });
+  }, [date, d]);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(hover: hover)');
+    const handler = (e) => setCanHover(e.matches);
+  
+    // set initial value
+    setCanHover(mq.matches);
+  
+    // preferred modern API
+    mq.addEventListener('change', handler);
+  
+    // cleanup
+    return () => {
+      mq.removeEventListener('change', handler);
+    };
+  }, []);
+
+
+  if (loading) return <div>Loading…</div>;
+  if (!data || data.length === 0) return <div>No data to display</div>;
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const containerStyle = {
     //backgroundColor: 'white',
@@ -455,7 +506,7 @@ export function ExpenseTimeline({ data = expensesDataSummary.default }) {
         </div>
         <div>
           <h2 style={titleStyle}>{t('annualExpenses')}</h2>
-          <p style={subtitleStyle}>{t('expenseTimeline')}</p>
+          <p style={subtitleStyle}>{t('expenseTimeline')}{" "}{prettyDateLT(date)}</p>
         </div>
       </div>
 
@@ -466,9 +517,9 @@ export function ExpenseTimeline({ data = expensesDataSummary.default }) {
             key={yearData.label}
             data={yearData}
             index={index}
-            isHovered={hoveredIndex === index}
-            onHover={() => setHoveredIndex(index)}
-            onLeave={() => setHoveredIndex(null)}
+            isHovered={canHover && hoveredIndex === index}
+            onHover={canHover ? () => setHoveredIndex(index) : undefined}
+            onLeave={canHover ? () => setHoveredIndex(null) : undefined}
           />
         ))}
       </div>

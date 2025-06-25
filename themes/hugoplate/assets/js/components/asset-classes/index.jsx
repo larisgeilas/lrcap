@@ -1,7 +1,8 @@
 import { h } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
-import { formatCurrency, AccountsMap } from '../../utils';
+import { formatCurrency, AccountsMap, prettyDateLT } from '../../utils';
 import * as investmentPortfolioData from "../../../reports-widgets-data/investment-portfolio.json";
+import { loadInvestmentPortfolio } from '../../data-loaders';
 const assetClassesData = investmentPortfolioData.default.filter(item => item.Account !== 'Goal Net Worth' && item.Account !== 'Total');
 
 const translations = {
@@ -124,26 +125,41 @@ const getAssetIcon = (account) => {
   return iconMap[account] || h(Wallet, { className: "w-5 h-5 text-gray-600" });
 };
 
-export function AssetClasses({ d = assetClassesData, jsonUrl = null }) {
-
-  const [data, setData] = useState(null);
+export function AssetClasses({ d = assetClassesData, date = null }) {
+  const [data, setData]   = useState();
+  const [error, setError] = useState();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch(jsonUrl)
-      .then(res => {
-        if (!res.ok) setData(d)
-        return
-      })
+    setError(null);
+    if (!date) {
+      setData(d);
+      return;
+    }
+    setLoading(true)
+
+    loadInvestmentPortfolio(date)
       .then(raw => {
-        // filter out unwanted accounts
         setData(raw.filter(item =>
           item.Account !== 'Goal Net Worth' && item.Account !== 'Total'
         ));
       })
-      .catch(console.error);
-  }, [jsonUrl]);
+      .catch(err => {
+        console.error(err);
+        setError(err.message);
+        setData(d); // fallback to the ytd data
+      })
+      .finally(() => {
+        // 3) Always clear loading flag
+        setLoading(false);
+      });
+  }, [date]);
 
-  if (!data) return <div>Loading…</div>;
+  
+  if (loading) return <div>Loading…</div>;
+  if (data === undefined) return <div>Loading…</div>;
+  if (data.length === 0) return <div>No data for this date</div>;
+
   const totalNetWorthObject = data.find(item => item.Account === "Current Total Net Worth");
 
   const getRoiStyle = (roi) => ({
@@ -157,16 +173,31 @@ export function AssetClasses({ d = assetClassesData, jsonUrl = null }) {
     return null;
   };
 
+  const displayDate = error 
+    ? new Date()                    // today
+    : date;
+
+  const subtitleStyle = {
+    fontSize: '14px',
+    color: '#6b7280',
+    margin: '10px 0 0 0'
+  };
+
   return h('div', { className: "bg-white rounded-xl shadow-lg p-6 max-w-6xl mx-auto" },
     h('div', { className: "flex items-center gap-3 mb-6" },
       h('div', { className: "p-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg" },
         h(Wallet, { className: "w-6 h-6 text-white" })
       ),
-      h('h2', { className: "text-2xl font-bold text-gray-800" }, 'Turto Balansas')
+      h('h2', { className: "text-2xl font-bold text-gray-800" }, 'Turto Balansas'),
+      h(
+        'p',
+        { style: subtitleStyle },
+        prettyDateLT(displayDate)
+      )
     ),
     
     h('div', { className: "overflow-x-auto" },
-      h('table', { className: "w-full" },
+      h('table', { className: "w-full border-collapse table-auto" },
         h('thead', null,
           h('tr', { className: "border-b-2 border-gray-100" },
             h('th', { className: "text-left py-4 px-3 font-semibold text-gray-700 w-2/5" },

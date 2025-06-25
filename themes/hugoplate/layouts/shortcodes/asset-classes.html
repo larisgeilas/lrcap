@@ -1,17 +1,20 @@
 <div
   id="asset-classes-{{ .Ordinal }}"
   class="asset-classes-container"
-  data-json-url="{{ printf "reports-widgets-data/investment-portfolio/investment-portfolio-%s.json" (.Get "date") | relURL }}"
+  data-date="{{ .Get "date" }}"
 ></div>
 <script type="module">
-  document.addEventListener('DOMContentLoaded', function () {
-    const mountEl = document.getElementById('asset-classes-{{ .Ordinal }}');
-    const jsonUrl = mountEl.dataset.jsonUrl;
-    if (window.preact && window.AssetClasses && mountEl) {
-      window.preact.render(
-        window.preact.createElement(window.AssetClasses, { jsonUrl }),
-        mountEl
-      );
-    }
+  import "/js/widgets.js";  // ensures window.preact & window.AssetClasses are available
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const el = document.getElementById('asset-classes-{{ .Ordinal }}');
+    const date = el.dataset.date;  // e.g. "2025-06-13"
+    window.preact.render(
+      window.preact.createElement(
+        window.AssetClasses,
+        { date }
+      ),
+      el
+    );
   });
 </script>
