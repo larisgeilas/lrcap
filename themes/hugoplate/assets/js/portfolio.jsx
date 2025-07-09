@@ -1,24 +1,10 @@
 import { h } from "preact";
 import { render } from "preact";
-import * as investmentPortfolioData from "../reports-widgets-data/investment-portfolio.json";
 import { ExpenseTimeline } from "./components/expenses-timeline";
 import { GoalNetWorth } from "./components/goal-net-worth";
-import { CurrentNetWorth } from "./components/current-net-worth-info";
 import { AssetClasses } from "./components/asset-classes";
-import Stocks from "./components/stocks";
-// import TreemapOpenPositions from "./treempa-stocks-new";
+import { Stocks } from "./components/stocks";
 
-const goalNetWorthData = investmentPortfolioData.default.find(d => d.Account === 'Goal Net Worth');
-const currentNetWorthData = investmentPortfolioData.default.find(d => d.Account === 'Current Total Net Worth')
-const assetClassesData = investmentPortfolioData.default.filter(item => item.Account !== 'Goal Net Worth' && item.Account !== 'Total');
-const stocksData = investmentPortfolioData.default.find(item => item.Account === 'Invested Cash');
-const mainAccKey = Object.keys(stocksData.growth.ibkr)[0];
-const speculationAccKey = Object.keys(stocksData.growth.ibkr)[1];
-const mainAccStocksData = stocksData.growth.ibkr[mainAccKey]; 
-const speculationAccData = stocksData.growth.ibkr[speculationAccKey]; 
-const mainAccData = stocksData.growth.accountsGrowth[mainAccKey];
-const mergedOpenPositions = [ ...mainAccStocksData.openPositions, ...speculationAccData.openPositions ]
-const mergedStockPositions = { openPositions: mergedOpenPositions }
 
 const PortfolioApp = () => {
 
@@ -76,19 +62,11 @@ const PortfolioApp = () => {
           <AssetClasses />
         </div>
       </div>
-      {/* <div>
-        <TreemapOpenPositions />
-      </div> */}
-       {/* <div className="responsive-grid-1">
-         <div>
-          <Stocks accData={stocksData} openPositions={mergedStockPositions.openPositions} />
-          </div>
-      </div> */}
-      {/* <div className="responsive-grid-1">
-        <div style={gridItemStylePlain}>
-          <AssetClasses data={assetClassesData}/>
+      <div className="responsive-grid-1">
+        <div>
+          <Stocks />
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

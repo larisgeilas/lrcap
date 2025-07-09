@@ -1,0 +1,18 @@
+<div
+  id="stocks-{{ .Ordinal }}"
+  class="stocks-container"
+  data-date="{{ .Get "date" }}"
+></div>
+
+<script type="module">
+  document.addEventListener('DOMContentLoaded', function () {
+    const goalEl = document.getElementById('stocks-{{ .Ordinal }}');
+    if (window.preact && window.Stocks && goalEl) {
+      const date = goalEl.dataset.date;  // e.g. "2025-06-13"
+      window.preact.render(
+        window.preact.createElement(window.Stocks, { date }),
+        goalEl
+      );
+    }
+  });
+</script>
