@@ -205,6 +205,10 @@ const DetailPanel = ({ data, onClose }) => {
           </div>
           
           <div className="bg-gray-50 rounded-lg p-4">
+            {/* <div className="flex justify-between items-center">
+              <span className="text-sm font-medium text-gray-600">{t('Market Price')}</span>
+              <span className="font-semibold text-gray-800">{formatCurrency(data.livePrice || data.markPrice)}</span>
+            </div> */}
             <div className="flex justify-between items-center">
               <span className="text-sm font-medium text-gray-600">{t('Cost Basis')}</span>
               <span className="font-semibold text-gray-800">{formatCurrency(data.costBasisPrice)}</span>

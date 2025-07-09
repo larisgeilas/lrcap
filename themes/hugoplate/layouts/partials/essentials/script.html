@@ -29,6 +29,9 @@
 {{ end }}
 
 {{/* scripts */}}
+<script>
+  window.BUILD_ID = "{{ now.Unix }}";
+</script>
 <script
   crossorigin="anonymous"
   integrity="{{ $scripts.Data.Integrity }}"
