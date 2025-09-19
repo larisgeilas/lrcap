@@ -2,7 +2,7 @@
 title: "Vasara ir investicijos"
 meta_title: "Investicinio portfelio apžvalga po vasaros 2025"
 description: "Asmeninio investicinio portfelio apžvalga: išlaidos, sprendimai, naujos investicijos ir rezultatai po vasaros 2025."
-date: 2025-07-09T11:23:00Z
+date: 2025-09-19T11:23:00Z
 image: "/images/gallery/summer.jpg"
 slug: "vasara-ir-investicijos"
 categories: ["Investicijos"]
