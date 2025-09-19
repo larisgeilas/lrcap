@@ -206,24 +206,24 @@ export function AssetClasses({ d = assetClassesData, date = null }) {
           key={idx}
           className="border-b hover:bg-gray-50 transition-colors"
         >
-          <td className="py-4 px-3">
+          <td className="responsive-th-4 responsive-th-3">
             <div className="flex items-center gap-3">
-              <Icon cls="w-5 h-5 text-gray-600" />
+              <Icon cls="w-5 h-5 text-gray-600 icons" />
               <span className="font-medium text-gray-800">
-                {AccountsMap[Account] || Account}
+                {AccountsMap[Account] || Account}{year !== '-' ? `, ${year}` : ''}
               </span>
             </div>
           </td>
-          <td className="py-4 px-3 text-gray-600">
+          {/* <td className="py-4 px-3 text-gray-600">
             {year}
-          </td>
-          <td className="py-4 px-3 text-right font-mono text-gray-800">
+          </td> */}
+          <td className="responsive-th-4 responsive-th-3 text-right font-mono text-gray-800">
             {formatCurrency(spentAmountEur ?? spentAmount)}
           </td>
-          <td className="py-4 px-3 text-right font-mono text-gray-800">
+          <td className="responsive-th-4 responsive-th-3 text-right font-mono text-gray-800">
             {formatCurrency(currentValueEur ?? currentValue)}
           </td>
-          <td className="py-4 px-3 text-right">
+          <td className="responsive-th-4 responsive-th-3 text-right">
             <div className="flex items-center justify-end">
               <span style={{
                 color: roi > 0 ? '#10b981' : roi < 0 ? '#ef4444' : '#6b7280',
@@ -305,6 +305,37 @@ export function AssetClasses({ d = assetClassesData, date = null }) {
 
   return (
     <div className="bg-white rounded-xl shadow-lg p-6 max-w-6xl mx-auto">
+      <style>
+        {`
+          @media (max-width: 639px) {
+            .responsive-th-4 {
+              padding-block: calc(var(--spacing) * 2);
+            }
+            .responsive-th-3 {
+              padding-inline: calc(var(--spacing) * 1);
+            }
+
+            .icons {
+              display: none;}
+          }
+          @media (min-width: 640px) and (max-width: 767px) {
+            .responsive-th-4 {
+              padding-block: calc(var(--spacing) * 4);
+            }
+            .responsive-th-3 {
+              padding-inline: calc(var(--spacing) * 3);
+            }
+          }
+          @media (min-width: 768px) {
+            .responsive-th-4 {
+              padding-block: calc(var(--spacing) * 4);
+            }
+            .responsive-th-3 {
+              padding-inline: calc(var(--spacing) * 3);
+            }
+          }
+        `}
+      </style>
       <header className="flex items-center gap-3 mb-6">
         <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg">
           <Svg.Wallet cls="w-6 h-6 text-white" />
@@ -318,14 +349,15 @@ export function AssetClasses({ d = assetClassesData, date = null }) {
         <table className="w-full">
           <thead>
             <tr className="border-b-2 border-gray-100">
-              {['Turtas', t('investedDate'), 'Investuota', 'Nerealizuota Vertė', 'ROI'].map((h, i) => (
-                <th key={i} className={`text-left py-4 px-3 font-semibold text-gray-700${i===0? ' w-2/5':''}`}>
-                  <div className="flex items-center justify-end gap-2">
+              {/* {['Turtas', t('investedDate'), 'Investuota', 'Nerealizuota Vertė', 'ROI'].map((h, i) => ( */}
+              {['Turtas', 'Investuota', 'Nerealizuota Vertė', 'ROI'].map((h, i) => (
+                <th key={i} className={`text-left responsive-th-4 responsive-th-3 font-semibold text-gray-700${i===0? ' w-2/5':''}`}>
+                  <div className={`flex items-center ${i < 1 ? 'justify-start' : 'justify-end'} gap-2`}>
                     {i===0 && <Svg.Wallet cls="w-4 h-4" />}
-                    {i===1 && <Svg.Calendar cls="w-4 h-4" />}
-                    {i===2 && <Svg.Euro cls="w-4 h-4" />}
-                    {i===3 && <Svg.BarChart3 cls="w-4 h-4" />}
-                    {i===4 && <Svg.TrendingUp cls="w-4 h-4" />}
+                    {/* {i===1 && <Svg.Calendar cls="w-4 h-4" />} */}
+                    {i===1 && <Svg.Euro cls="w-4 h-4" />}
+                    {i===2 && <Svg.BarChart3 cls="w-4 h-4" />}
+                    {i===3 && <Svg.TrendingUp cls="w-4 h-4" />}
                     {h}
                   </div>
                 </th>

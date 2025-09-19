@@ -398,7 +398,7 @@ function ExpenseBar({data, index, isHovered, onHover, onLeave }) {
   );
 }
 
-export function ExpenseTimeline({ d = expensesDataSummary.default, date = null }) {
+export function ExpenseTimeline({ d = expensesDataSummary.default, date = null, onlyYtd = false }) {
   const [data, setData]     = useState(d);
   const [loading, setLoading] = useState(false);
   const [error, setError]   = useState(null);
@@ -460,7 +460,7 @@ export function ExpenseTimeline({ d = expensesDataSummary.default, date = null }
     paddingTop: '24px',
     paddingRight: '0px',
     paddingLeft: '8px',
-    maxWidth: '800px',
+    //maxWidth: '800px',
     minWidth: '300px'
   };
 
@@ -512,7 +512,7 @@ export function ExpenseTimeline({ d = expensesDataSummary.default, date = null }
 
       {/* Timeline */}
       <div style={timelineStyle}>
-        {data.map((yearData, index) => (
+        {(onlyYtd ? data.filter(d => d.label === 'ytd') : data).map((yearData, index) => (
           <ExpenseBar
             key={yearData.label}
             data={yearData}

@@ -1,10 +1,9 @@
 import { h } from "preact";
 import { render } from "preact";
 import { useEffect, useState } from 'preact/hooks';
-import { ExpenseTimeline } from "../expenses-timeline";
 import { GoalNetWorth } from "../goal-net-worth";
 
-export function GoalExpense ({ date, onlyYtd = false }) {
+export function Goal ({ date}) {
 
   return (
     <div style={containerStyle}>
@@ -48,16 +47,7 @@ export function GoalExpense ({ date, onlyYtd = false }) {
     `}
     </style>
 
-      {onlyYtd ?<ExpenseTimeline date={date} onlyYtd={onlyYtd}/> :  
-        <div className="responsive-grid-2">
-          <div>
-            <GoalNetWorth date={date}/>
-          </div>
-          <div >
-            <ExpenseTimeline date={date}/>
-          </div>
-        </div>
-      }
+    <GoalNetWorth date={date}/>
     </div>
   );
 };

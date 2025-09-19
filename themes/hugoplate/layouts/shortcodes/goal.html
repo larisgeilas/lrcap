@@ -1,0 +1,18 @@
+<div
+  id="goal-{{ .Ordinal }}"
+  class="goal-container"
+  data-date="{{ .Get "date" }}"
+></div>
+
+<script type="module">
+  document.addEventListener('DOMContentLoaded', function () {
+    const goalEl = document.getElementById('goal-{{ .Ordinal }}');
+    if (window.preact && window.Goal && goalEl) {
+      const date = goalEl.dataset.date;  // e.g. "2025-06-13"
+      window.preact.render(
+        window.preact.createElement(window.Goal, { date }),
+        goalEl
+      );
+    }
+  });
+</script>

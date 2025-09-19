@@ -2,6 +2,7 @@
   id="goal-expense-{{ .Ordinal }}"
   class="goal-expense-container"
   data-date="{{ .Get "date" }}"
+  data-only-ytd="{{ .Get "only-ytd" }}"
 ></div>
 
 <script type="module">
@@ -9,8 +10,9 @@
     const goalEl = document.getElementById('goal-expense-{{ .Ordinal }}');
     if (window.preact && window.GoalExpense && goalEl) {
       const date = goalEl.dataset.date;  // e.g. "2025-06-13"
+      const onlyYtd = !!goalEl.dataset.onlyYtd;
       window.preact.render(
-        window.preact.createElement(window.GoalExpense, { date }),
+        window.preact.createElement(window.GoalExpense, { date, onlyYtd }),
         goalEl
       );
     }

@@ -55,3 +55,28 @@ Kaip Tautvydas Marčiulaitis yra sakęs, nuosavą gyvenamąjį būstą reikia tr
 Šeimos reikmėms turiu manau pakankamai pinigų (metų pagalvę).
 
 Investuotas kapitalas tai yra pinigai kurie jau nukeliavę į investicines sąskaitas, kaip jiems sekasi pažiūrėsime vėliau.
+
+
+#pensija
+
+nors ir 80% seka indeksą, bet per devjus metus pripliusino vos 7.81%, tai mažiau nei 4% pelno per metus. Nors fondo vieneto kaina per dvejus metus kilo 22%. Tai yra labai nedidelis skaicius nes atitinkamu fondu goindex, swedbank vieneto kainos pakilo 28% ir  Suprantama, DCA turi savo minusu. 
+
+
+| Seka indeksa ?| Pensiju fondas | 2 m. rezultatai | vs Luminor 16+ | vs Artea index | vs Goindex |
+| ------------- | ----------- | ----- | ---------- | :---: | ---------| ---------|
+| Taip (orentuotas i Tvaruma) | Luminor Tvari Ateitis Index        | 15%  | 23.6% |  |
+| Taip (bet tik 80% ) | Artea Ambicingas 18+        | 22%  | | nepakanka duomenu    | 28.15% |
+
+Ilgalaikėje perspektyvoje procentai vienareiksmiskai pagerės, bet palyginus su Goindex, netgi su tais standartiniais 80/20. Luminor Tvarus indeksas stipriai underperformina metai is metu. Artea Ambicingas 18+ atsilieka nuo Goindex bet tai suprantama.
+
+Kas man užkliuvo labiausiai...
+
+Iš [**Luminor tvari ateitis index**](https://www.luminor.lt/lt/rinkis-fonda?fund_type=pension&fund=22&currency=eur&period=custom&from=2024-01-01&to=2025-09-19) aprašymo
+
+>   Tai yra didelės rizikos fondas, iki 100 proc. turto gali būti investuojama akcijų rinkose. Akcijoms pasirinkta pasaulinė kryptis, kurios ilgalaikis pajamingumas yra stabilesnis, palyginti su sektoriniu ar regioniniu principu sudarytų fondų pajamingumu. Investuojama tik į akcijų fondus, kurie  seka rinkos indeksus besilaikančius aukštų tvarumo standartų.
+
+Kodėl Bankai negali būti normalūs? Kodėl reik prigalvoti visokiu **aukštų tvarumo standartų**. Bet kas juokingiausia mano partnerei šį indeksą prastumė Luminor konsultantai kaip geresnę alternatyvą to pačio Luminor 16+. Neva tikra indeksini fonda kuris seka indeksa ir mokesčiu mažiau ir aktyvaus valdymo mažiau ir nėra obligacijų. Bet gaunasi - fondas kuris tik viso labo 80% seka pasaulio akcijų indeksą performina vos ne dvigubai geriau negu fondas kuris 100% seka tvarius indeksus. Ir aš pasiaiškinau į ka investuoja šis fondas ir pasirodo aš visai ne taip supratau kas yra "Tvarus indeksas" tai ne toks indeksas kuris turi gerus tvarius finansinius rodiklius, šioj vietoj tvarumas yra aplinkai yra pagrindinis kriterijus, tai reiškia jokių naftos kompanijų ar ginklų pramonės įmonių tokiose indeksuose nėra. To pasekoje gražos mažesnes.
+
+
+
+Kolkas supratau viena, jog visi tie bankų pasilymai su indeksiniais trečios pakopos fondais yra ekspermentai Artea neturi jokios istorijos, Luminor tyliai nutyli, kad fondas yra labai futuristins savo ideologija ir tinka labiau veganams arba ideologistams. Goindex atrodo kaip ir ok, bet jauna maža įmonė, nėra to patikimumo nors skaičiai net labai gražųs.
