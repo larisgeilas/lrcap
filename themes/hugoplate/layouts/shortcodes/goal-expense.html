@@ -10,7 +10,7 @@
     const goalEl = document.getElementById('goal-expense-{{ .Ordinal }}');
     if (window.preact && window.GoalExpense && goalEl) {
       const date = goalEl.dataset.date;  // e.g. "2025-06-13"
-      const onlyYtd = !!goalEl.dataset.onlyYtd;
+      const onlyYtd = goalEl.dataset.onlyYtd.length > 2;
       window.preact.render(
         window.preact.createElement(window.GoalExpense, { date, onlyYtd }),
         goalEl
