@@ -162,10 +162,12 @@ function Tooltip({ totalExpenses, totalRevenue, netIncome, topExpenses, style })
   );
 }
 
-function ExpenseBar({data, index, isHovered, onHover, onLeave }) {
+function ExpenseBar({data, index, isHovered, className, onHover, onLeave }) {
 
   const { label, totalExpensePercentage, totalExpenseGoal, totalExpenses, totalRevenue, netIncome, topExpenses } = data;
-  const isOverGoal = totalExpensePercentage > totalExpenseGoal;
+  
+  const safeTotalExpensePercentage = totalExpensePercentage ?? 0;
+  const isOverGoal = safeTotalExpensePercentage > totalExpenseGoal;
   
   const barItemStyle = {
     backgroundColor: 'white',
@@ -227,7 +229,7 @@ function ExpenseBar({data, index, isHovered, onHover, onLeave }) {
 
   const progressFillStyle = {
     height: '100%',
-    width: `${Math.min(totalExpensePercentage, 100)}%`,
+    width: `${Math.min(safeTotalExpensePercentage, 100)}%`,
     background: isOverGoal 
       ? 'linear-gradient(90deg, #ef4444 0%, #dc2626 100%)'
       : 'linear-gradient(90deg, #10b981 0%, #059669 100%)',
@@ -297,6 +299,7 @@ function ExpenseBar({data, index, isHovered, onHover, onLeave }) {
 
   return (
     <div 
+      className={className}
       style={barItemStyle}
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
@@ -327,7 +330,7 @@ function ExpenseBar({data, index, isHovered, onHover, onLeave }) {
             fontWeight: 'bold',
             color: isOverGoal ? '#ef4444' : '#10b981'
           }}>
-            {totalExpensePercentage.toFixed(1)}%
+            {safeTotalExpensePercentage.toFixed(1)}%
           </span>
         </div>
         
@@ -490,6 +493,14 @@ export function ExpenseTimeline({ d = expensesDataSummary.default, date = null, 
     gap: '4px'
   };
 
+  const currentYear = new Date().getFullYear();
+  const cutoffYear = currentYear - 1;
+
+  const isOlderThanCutoff = (label) => {
+    const year = Number(label);            // "2024" -> 2024, "YTD" -> NaN
+    return Number.isFinite(year) && year < cutoffYear;
+  };
+
   return (
     <div style={containerStyle}>
        {/* Header */}
@@ -517,6 +528,7 @@ export function ExpenseTimeline({ d = expensesDataSummary.default, date = null, 
             key={yearData.label}
             data={yearData}
             index={index}
+            className={isOlderThanCutoff(yearData.label) ? 'is-old-year' : ''}
             isHovered={canHover && hoveredIndex === index}
             onHover={canHover ? () => setHoveredIndex(index) : undefined}
             onLeave={canHover ? () => setHoveredIndex(null) : undefined}
