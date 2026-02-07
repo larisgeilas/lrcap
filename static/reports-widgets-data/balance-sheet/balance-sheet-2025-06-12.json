@@ -1,0 +1,358 @@
+[
+  {
+    "column_0": "Assets",
+    "column_1": "",
+    "column_2": "",
+    "column_3": ""
+  },
+  {
+    "column_0": "Assets",
+    "column_1": "",
+    "column_2": "",
+    "column_3": "€0.00"
+  },
+  {
+    "column_0": "Certs of Deposit",
+    "column_1": "",
+    "column_2": "€0.00",
+    "column_3": ""
+  },
+  {
+    "column_0": "Cert of Deposit #1",
+    "column_1": "€10,000.00",
+    "column_2": "",
+    "column_3": ""
+  },
+  {
+    "column_0": "Cert of Deposit #3",
+    "column_1": "€15,000.00",
+    "column_2": "",
+    "column_3": ""
+  },
+  {
+    "column_0": "Savings, SKU",
+    "column_1": "€2,000.00",
+    "column_2": "",
+    "column_3": ""
+  },
+  {
+    "column_0": "Total Certs of Deposit",
+    "column_1": "",
+    "column_2": "€27,000.00",
+    "column_3": ""
+  },
+  {
+    "column_0": "Current Assets",
+    "column_1": "",
+    "column_2": "€0.00",
+    "column_3": ""
+  },
+  {
+    "column_0": "Cash",
+    "column_1": "€2,172.93",
+    "column_2": "",
+    "column_3": ""
+  },
+  {
+    "column_0": "Current, Swed",
+    "column_1": "€413.11",
+    "column_2": "",
+    "column_3": ""
+  },
+  {
+    "column_0": "Investment, Swed",
+    "column_1": "€0.00",
+    "column_2": "",
+    "column_3": ""
+  },
+  {
+    "column_0": "Current, Luminor",
+    "column_1": "€1,109.91",
+    "column_2": "",
+    "column_3": ""
+  },
+  {
+    "column_0": "Savings, Luminor",
+    "column_1": "€17,488.83",
+    "column_2": "",
+    "column_3": ""
+  },
+  {
+    "column_0": "Total Current Assets",
+    "column_1": "",
+    "column_2": "€21,184.78",
+    "column_3": ""
+  },
+  {
+    "column_0": "Fixed Assets",
+    "column_1": "",
+    "column_2": "€0.00",
+    "column_3": ""
+  },
+  {
+    "column_0": "Car",
+    "column_1": "€33,960.29",
+    "column_2": "",
+    "column_3": ""
+  },
+  {
+    "column_0": "House",
+    "column_1": "€142,593.11",
+    "column_2": "",
+    "column_3": ""
+  },
+  {
+    "column_0": "Other N.T.",
+    "column_1": "€27,000.00",
+    "column_2": "",
+    "column_3": ""
+  },
+  {
+    "column_0": "Total Fixed Assets",
+    "column_1": "",
+    "column_2": "€203,553.40",
+    "column_3": ""
+  },
+  {
+    "column_0": "Investments",
+    "column_1": "",
+    "column_2": "€0.00",
+    "column_3": ""
+  },
+  {
+    "column_0": "Crypto",
+    "column_1": "0.0067 BTC\n\n€631.93",
+    "column_2": "0.0067 BTC",
+    "column_3": "",
+    "column_4": "€631.93",
+    "column_5": "",
+    "column_6": ""
+  },
+  {
+    "column_0": "0.0067 BTC",
+    "column_1": "",
+    "column_2": "€631.93"
+  },
+  {
+    "column_0": "III Pillar INVL",
+    "column_1": "7,846.587 INVL\n\n€7,721.83",
+    "column_2": "7,846.587 INVL",
+    "column_3": "",
+    "column_4": "€7,721.83",
+    "column_5": "",
+    "column_6": ""
+  },
+  {
+    "column_0": "7,846.587 INVL",
+    "column_1": "",
+    "column_2": "€7,721.83"
+  },
+  {
+    "column_0": "III Pillar Luminor Fund",
+    "column_1": "1,922.2305 LMNRIII\n\n€2,420.00",
+    "column_2": "1,922.2305 LMNRIII",
+    "column_3": "",
+    "column_4": "€2,420.00",
+    "column_5": "",
+    "column_6": ""
+  },
+  {
+    "column_0": "1,922.2305 LMNRIII",
+    "column_1": "",
+    "column_2": "€2,420.00"
+  },
+  {
+    "column_0": "III Pillar Luminor Cash",
+    "column_1": "€0.00",
+    "column_2": "",
+    "column_3": ""
+  },
+  {
+    "column_0": "Invested Cash",
+    "column_1": "€35,872.16",
+    "column_2": "",
+    "column_3": ""
+  },
+  {
+    "column_0": "Total Investments",
+    "column_1": "",
+    "column_2": "€46,645.92",
+    "column_3": ""
+  },
+  {
+    "column_0": "Total Assets",
+    "column_1": "",
+    "column_2": "",
+    "column_3": "€298,384.10"
+  },
+  {
+    "column_0": "Imbalance-EUR",
+    "column_1": "",
+    "column_2": "",
+    "column_3": "€0.00"
+  },
+  {
+    "column_0": "Imbalance-USD",
+    "column_1": "",
+    "column_2": "",
+    "column_3": "€0.00"
+  },
+  {
+    "column_0": "Orphan-EUR",
+    "column_1": "",
+    "column_2": "",
+    "column_3": "€0.00"
+  },
+  {
+    "column_0": "Total Assets",
+    "column_1": "",
+    "column_2": "",
+    "column_3": "€298,384.10"
+  },
+  {
+    "column_0": ""
+  },
+  {
+    "column_0": ""
+  },
+  {
+    "column_0": "Liabilities",
+    "column_1": "",
+    "column_2": "",
+    "column_3": ""
+  },
+  {
+    "column_0": "Liabilities",
+    "column_1": "",
+    "column_2": "",
+    "column_3": "€0.00"
+  },
+  {
+    "column_0": "Clearing",
+    "column_1": "",
+    "column_2": "€0.00",
+    "column_3": ""
+  },
+  {
+    "column_0": "Loans",
+    "column_1": "",
+    "column_2": "€0.00",
+    "column_3": ""
+  },
+  {
+    "column_0": "Car Loan",
+    "column_1": "€14,317.93",
+    "column_2": "",
+    "column_3": ""
+  },
+  {
+    "column_0": "Mortgage Loan",
+    "column_1": "€78,694.67",
+    "column_2": "",
+    "column_3": ""
+  },
+  {
+    "column_0": "Total Loans",
+    "column_1": "",
+    "column_2": "€93,012.60",
+    "column_3": ""
+  },
+  {
+    "column_0": "Credit Card",
+    "column_1": "",
+    "column_2": "€740.46",
+    "column_3": ""
+  },
+  {
+    "column_0": "Total Liabilities",
+    "column_1": "",
+    "column_2": "",
+    "column_3": "€93,753.06"
+  },
+  {
+    "column_0": "Total Liabilities",
+    "column_1": "",
+    "column_2": "",
+    "column_3": "€93,753.06"
+  },
+  {
+    "column_0": ""
+  },
+  {
+    "column_0": "Equity",
+    "column_1": "",
+    "column_2": "",
+    "column_3": ""
+  },
+  {
+    "column_0": "Equity",
+    "column_1": "",
+    "column_2": "",
+    "column_3": "€0.00"
+  },
+  {
+    "column_0": "Dollars",
+    "column_1": "",
+    "column_2": "$631.93\n\n€631.93",
+    "column_3": "$631.93",
+    "column_4": "",
+    "column_5": "€631.93",
+    "column_6": ""
+  },
+  {
+    "column_0": "$631.93",
+    "column_1": "",
+    "column_2": "€631.93"
+  },
+  {
+    "column_0": "Employer Contributions",
+    "column_1": "",
+    "column_2": "€7,721.83",
+    "column_3": ""
+  },
+  {
+    "column_0": "Opening Balances",
+    "column_1": "",
+    "column_2": "€137,011.38",
+    "column_3": ""
+  },
+  {
+    "column_0": "Revolut",
+    "column_1": "",
+    "column_2": "€472.16",
+    "column_3": ""
+  },
+  {
+    "column_0": "Total Equity",
+    "column_1": "",
+    "column_2": "",
+    "column_3": "€145,837.30"
+  },
+  {
+    "column_0": "Retained Earnings",
+    "column_1": "",
+    "column_2": "",
+    "column_3": "€58,792.94"
+  },
+  {
+    "column_0": "Unrealized Gains",
+    "column_1": "",
+    "column_2": "",
+    "column_3": "€0.00"
+  },
+  {
+    "column_0": "Total Equity",
+    "column_1": "",
+    "column_2": "",
+    "column_3": "€204,630.24"
+  },
+  {
+    "column_0": ""
+  },
+  {
+    "column_0": "Total Liabilities & Equity",
+    "column_1": "",
+    "column_2": "",
+    "column_3": "€298,383.30"
+  }
+]

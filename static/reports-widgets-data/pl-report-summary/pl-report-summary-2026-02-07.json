@@ -1,0 +1,155 @@
+[
+  {
+    "label": "2024",
+    "totalRevenue": 99844.45,
+    "totalExpenses": 68325.89,
+    "netIncome": 31518.56,
+    "netLoss": null,
+    "totalExpensePercentage": 68.43,
+    "totalExpenseGoal": 50,
+    "topExpenses": [
+      {
+        "expenseName": "Travel",
+        "expenseAmount": 8034.21
+      },
+      {
+        "expenseName": "Groceries",
+        "expenseAmount": 7868.06
+      },
+      {
+        "expenseName": "Kindergarten",
+        "expenseAmount": 6823
+      },
+      {
+        "expenseName": "Bikes",
+        "expenseAmount": 5294.66
+      },
+      {
+        "expenseName": "Mortgage Loan",
+        "expenseAmount": 4855.29
+      },
+      {
+        "expenseName": "Car Loan",
+        "expenseAmount": 4749.66
+      },
+      {
+        "expenseName": "Dining",
+        "expenseAmount": 4150.56
+      },
+      {
+        "expenseName": "Clothes",
+        "expenseAmount": 3642.28
+      },
+      {
+        "expenseName": "Medical Expenses",
+        "expenseAmount": 3228.11
+      },
+      {
+        "expenseName": "Fuel",
+        "expenseAmount": 2935.43
+      }
+    ]
+  },
+  {
+    "label": "2025",
+    "totalRevenue": 124537.51,
+    "totalExpenses": 69223.96,
+    "netIncome": 55313.55,
+    "netLoss": null,
+    "totalExpensePercentage": 55.58,
+    "totalExpenseGoal": 50,
+    "topExpenses": [
+      {
+        "expenseName": "Travel",
+        "expenseAmount": 17141.64
+      },
+      {
+        "expenseName": "Kindergarten",
+        "expenseAmount": 8140
+      },
+      {
+        "expenseName": "Groceries",
+        "expenseAmount": 8097
+      },
+      {
+        "expenseName": "Dining",
+        "expenseAmount": 4344.07
+      },
+      {
+        "expenseName": "Clothes",
+        "expenseAmount": 3855.54
+      },
+      {
+        "expenseName": "Supplies",
+        "expenseAmount": 3358.43
+      },
+      {
+        "expenseName": "Fuel",
+        "expenseAmount": 2879.53
+      },
+      {
+        "expenseName": "Bikes",
+        "expenseAmount": 2810.85
+      },
+      {
+        "expenseName": "Medical Expenses",
+        "expenseAmount": 2586.54
+      },
+      {
+        "expenseName": "Gifts",
+        "expenseAmount": 2482.43
+      }
+    ]
+  },
+  {
+    "label": "ytd",
+    "totalRevenue": 8882.35,
+    "totalExpenses": 8803.48,
+    "netIncome": 78.87,
+    "netLoss": null,
+    "totalExpensePercentage": 99.11,
+    "totalExpenseGoal": 50,
+    "topExpenses": [
+      {
+        "expenseName": "Travel",
+        "expenseAmount": 3463.3
+      },
+      {
+        "expenseName": "Kindergarten",
+        "expenseAmount": 1354
+      },
+      {
+        "expenseName": "Groceries",
+        "expenseAmount": 825.57
+      },
+      {
+        "expenseName": "Miscellaneous",
+        "expenseAmount": 500
+      },
+      {
+        "expenseName": "Medical Expenses",
+        "expenseAmount": 498.68
+      },
+      {
+        "expenseName": "Dining",
+        "expenseAmount": 369.63
+      },
+      {
+        "expenseName": "Beauty",
+        "expenseAmount": 357.08
+      },
+      {
+        "expenseName": "Fuel",
+        "expenseAmount": 301.58
+      },
+      {
+        "expenseName": "Gas",
+        "expenseAmount": 293.15
+      },
+      {
+        "expenseName": "Childcare",
+        "expenseAmount": 251.85
+      }
+    ]
+  }
+]

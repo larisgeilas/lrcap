@@ -1,0 +1,102 @@
+[
+  {
+    "label": "2024",
+    "totalRevenue": 99844.45,
+    "totalExpenses": 68325.89,
+    "netIncome": 31518.56,
+    "totalExpensePercentage": 68.43,
+    "totalExpenseGoal": 50,
+    "topExpenses": [
+      {
+        "expenseName": "Travel",
+        "expenseAmount": 8034.21
+      },
+      {
+        "expenseName": "Groceries",
+        "expenseAmount": 7868.06
+      },
+      {
+        "expenseName": "Kindergarten",
+        "expenseAmount": 6823
+      },
+      {
+        "expenseName": "Bikes",
+        "expenseAmount": 5294.66
+      },
+      {
+        "expenseName": "Mortgage Loan",
+        "expenseAmount": 4855.29
+      },
+      {
+        "expenseName": "Car Loan",
+        "expenseAmount": 4749.66
+      },
+      {
+        "expenseName": "Dining",
+        "expenseAmount": 4150.56
+      },
+      {
+        "expenseName": "Clothes",
+        "expenseAmount": 3642.28
+      },
+      {
+        "expenseName": "Medical Expenses",
+        "expenseAmount": 3228.11
+      },
+      {
+        "expenseName": "Fuel",
+        "expenseAmount": 2935.43
+      }
+    ]
+  },
+  {
+    "label": "ytd",
+    "totalRevenue": 121567.73,
+    "totalExpenses": 72503.49,
+    "netIncome": 49064.24,
+    "totalExpensePercentage": 59.64,
+    "totalExpenseGoal": 50,
+    "topExpenses": [
+      {
+        "expenseName": "Travel",
+        "expenseAmount": 20604.94
+      },
+      {
+        "expenseName": "Kindergarten",
+        "expenseAmount": 8140
+      },
+      {
+        "expenseName": "Groceries",
+        "expenseAmount": 8097
+      },
+      {
+        "expenseName": "Dining",
+        "expenseAmount": 4337.37
+      },
+      {
+        "expenseName": "Clothes",
+        "expenseAmount": 3799.54
+      },
+      {
+        "expenseName": "Supplies",
+        "expenseAmount": 3358.43
+      },
+      {
+        "expenseName": "Bikes",
+        "expenseAmount": 2810.85
+      },
+      {
+        "expenseName": "Fuel",
+        "expenseAmount": 2788.91
+      },
+      {
+        "expenseName": "Medical Expenses",
+        "expenseAmount": 2586.54
+      },
+      {
+        "expenseName": "Gifts",
+        "expenseAmount": 2482.43
+      }
+    ]
+  }
+]

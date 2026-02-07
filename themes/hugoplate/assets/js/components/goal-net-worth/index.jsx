@@ -4,7 +4,6 @@ import { formatCurrency, prettyDateLT } from '../../utils';
 import * as investmentPortfolioData from "../../../reports-widgets-data/investment-portfolio.json";
 import { useMediaQuery } from '../../media-query';
 import { loadInvestmentPortfolio } from '../../data-loaders';
-
 const goalNetWorthData = investmentPortfolioData.default.find(d => d.Account === 'Goal Net Worth');
 const translations = {
   en: {

@@ -1,0 +1,23 @@
+<div
+  id="expense-timeline-{{ .Ordinal }}"
+  class="expense-container"
+  data-date="{{ .Get "date" }}"
+  data-only-year="{{ .Get "only-year" | safeHTMLAttr }}"
+  data-only-ytd="{{ .Get "only-ytd" }}"
+></div>
+
+<script type="module">
+  document.addEventListener('DOMContentLoaded', function () {
+    const expenseEl = document.getElementById('expense-timeline-{{ .Ordinal }}');
+    if (window.preact && window.ExpenseTimeline && expenseEl) {
+      const date = expenseEl.dataset.date;  // e.g. "2025-06-13"
+      const year = expenseEl.dataset.onlyYear;  // e.g. "2025" // todo: escape "2025" to 2025
+      const escapedYear = year.replace(/"/g, ''); // Remove quotes if present
+      const onlyYtd = expenseEl.dataset.onlyYtd.length > 2;
+      window.preact.render(
+        window.preact.createElement(window.ExpenseTimeline, { date, onlyYtd, onlyYear: escapedYear !== "false" ? escapedYear : false }),
+        expenseEl
+      );
+    }
+  });
+</script>

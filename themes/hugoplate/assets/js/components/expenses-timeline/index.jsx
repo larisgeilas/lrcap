@@ -408,8 +408,7 @@ const X = ({ size = 16, className = "" }) => (
   <span className={`inline-flex items-center justify-center ${className}`} style={{fontSize: `${size}px`}}>✕</span>
 );
 
-const ExpensDetailPanel = ({ data, onClose }) => {
-  console.log(data)
+const ExpensDetailPanel = ({ data, onClose, inactive }) => {
   return (
     <div className="fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center z-50 backdrop-blur-sm">
       <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full m-4 overflow-hidden">
@@ -453,7 +452,7 @@ const ExpensDetailPanel = ({ data, onClose }) => {
   );
 };
 
-export function ExpenseTimeline({ d = expensesDataSummary.default, date = null, onlyYtd = false }) {
+export function ExpenseTimeline({ d = expensesDataSummary.default, date = null, onlyYtd = false, onlyYear = null }) {
   const [data, setData]     = useState(d);
   const [loading, setLoading] = useState(false);
   const [error, setError]   = useState(null);
@@ -492,7 +491,7 @@ export function ExpenseTimeline({ d = expensesDataSummary.default, date = null, 
     const handler = (e) => setCanHover(e.matches);
   
     // set initial value
-    setCanHover(mq.matches);
+    setCanHover(mq.matches && !onlyYear && !onlyYtd);
   
     // preferred modern API
     mq.addEventListener('change', handler);
@@ -580,7 +579,7 @@ export function ExpenseTimeline({ d = expensesDataSummary.default, date = null, 
 
       {/* Timeline */}
       <div style={timelineStyle}>
-        {(onlyYtd ? data.filter(d => d.label === 'ytd') : data).map((yearData, index) => (
+        {(onlyYtd ? data.filter(d => d.label === 'ytd') : onlyYear ? data.filter(d => d.label === onlyYear) : data).map((yearData, index) => (
           <ExpenseBar
             key={yearData.label}
             data={yearData}
@@ -589,7 +588,7 @@ export function ExpenseTimeline({ d = expensesDataSummary.default, date = null, 
             isHovered={canHover && hoveredIndex === index}
             onHover={canHover ? () => setHoveredIndex(index) : undefined}
             onLeave={canHover ? () => setHoveredIndex(null) : undefined}
-            onExpenseClick={(expenseYearData) => setExpenseDetailsSelected(expenseYearData)}
+            onExpenseClick={onlyYear || onlyYtd ? () => void(0) : (expenseYearData) => setExpenseDetailsSelected(expenseYearData)}
           />
         ))}
       </div>

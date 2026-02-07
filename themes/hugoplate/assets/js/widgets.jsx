@@ -3,6 +3,7 @@ import { AssetClasses } from './components/asset-classes';
 import { GoalExpense } from './components/goal-expense';
 import { Goal } from './components/goal';
 import { Stocks} from './components/stocks';
+import { ExpenseTimeline } from './components/expenses-timeline';
 
 if (typeof window !== 'undefined') {
   window.preact = { h, render, createElement: h };
@@ -10,4 +11,5 @@ if (typeof window !== 'undefined') {
   window.GoalExpense = GoalExpense;
   window.Goal = Goal;
   window.Stocks = Stocks;
+  window.ExpenseTimeline = ExpenseTimeline
 }
