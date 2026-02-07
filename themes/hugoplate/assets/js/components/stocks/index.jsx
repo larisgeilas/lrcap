@@ -148,7 +148,7 @@ const DetailPanel = ({ data, onClose }) => {
   const isPositive = data.profit >= 0;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 backdrop-blur-sm">
+    <div className="fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center z-50 backdrop-blur-sm">
       <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full m-4 overflow-hidden">
         <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6 relative">
           <button

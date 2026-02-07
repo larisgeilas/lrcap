@@ -27,9 +27,20 @@ export const AccountsMap = {
   "Car Loan": "Lizingas", 
   "Clothes": "Drabužiai", 
   "Dining": "Restoranai", 
-  "Fuel": "Kuras", 
+  "Fuel": "Auto Kuras", 
   "Childcare": "Vaikų išlaidos", 
   "Medical Expenses": "Medicinos reikmenys", 
+  "Miscallaneous": "Nekategarizuotos",
+  "Beuty": "Grožio paslaugos",
+  "Education": "Švietimas",
+  "Gifts": "Dovanos",
+  "Entertainment": "Pramogos",
+  "Subscriptions": "Prenumeratos",
+  "Gas": "Namų Dujos",
+  "Electricity": "Namų Elektros energija",
+  "Water": "Namų Vanduo",
+  "Internet": "Namų Internetas",
+  "Phone": "Telefonai",
 };
 
 export const prettyDateLT = (iso) => {

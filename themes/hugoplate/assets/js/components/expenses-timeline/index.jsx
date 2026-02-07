@@ -16,7 +16,8 @@ const translations = {
     onTrack: 'On Track',
     overGoal: 'Over Goal',
     netIncome: 'Net Income',
-    goal: 'Goal'
+    goal: 'Goal',
+    'Expense Details': 'Expense Details'
   },
   lt: {
     annualExpenses: 'Metinės Išlaidos',
@@ -29,7 +30,8 @@ const translations = {
     onTrack: 'Pagal Planą',
     overGoal: 'Viršyta Ribą',
     netIncome: 'Grynosios Pajamos',
-    goal: 'Tikslas'
+    goal: 'Tikslas',
+    'Expense Details': 'Išlaidos Detaliau'
   }
 };
 
@@ -161,7 +163,7 @@ function Tooltip({ totalExpenses, totalRevenue, netIncome, netLoss, topExpenses,
   );
 }
 
-function ExpenseBar({data, index, isHovered, className, onHover, onLeave }) {
+function ExpenseBar({data, index, isHovered, className, onHover, onLeave, onExpenseClick }) {
 
   const { label, totalExpensePercentage, totalExpenseGoal, totalExpenses, totalRevenue, netIncome, netLoss, topExpenses } = data;
   
@@ -308,6 +310,7 @@ function ExpenseBar({data, index, isHovered, className, onHover, onLeave }) {
           e.currentTarget.style.transform = 'translateY(-2px)';
         }
       }}
+      onClick={() => onExpenseClick(data)}
     >
       {/* Header */}
       <div style={headerStyle}>
@@ -401,11 +404,61 @@ function ExpenseBar({data, index, isHovered, className, onHover, onLeave }) {
   );
 }
 
+const X = ({ size = 16, className = "" }) => (
+  <span className={`inline-flex items-center justify-center ${className}`} style={{fontSize: `${size}px`}}>✕</span>
+);
+
+const ExpensDetailPanel = ({ data, onClose }) => {
+  console.log(data)
+  return (
+    <div className="fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center z-50 backdrop-blur-sm">
+      <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full m-4 overflow-hidden">
+        <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6 relative">
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 text-white hover:bg-white hover:bg-opacity-20 rounded-full p-1 transition-all duration-200"
+          >
+            <X size={20} />
+          </button>
+          <div className="flex items-center space-x-3">
+            <div className="bg-white bg-opacity-20 rounded-lg p-2">
+              <MoneyIcon />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold">{data.symbol}</h3>
+              <p className="text-blue-100">{t('Expense Details')} <strong className="text-white">{data.label}</strong></p>
+            </div>
+          </div>
+        </div>
+        
+        <div className="p-6 space-y-4">
+          <div className="flex justify-between">
+            <table className="w-full text-left">
+              <tbody>
+                {data.topExpenses.map((expObj, index) => {
+                  const { expenseName, expenseAmount } = expObj;
+                  return (
+                    <tr key={index} className="border-b border-gray-200">
+                      <td className="py-2 font-medium text-gray-700">{AccountsMap[expenseName] || expenseName}</td>
+                      <td className="py-2 font-bold text-gray-900">{formatCurrency(expenseAmount)}</td>
+                    </tr>
+                  );
+                })}  
+                </tbody>
+                </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export function ExpenseTimeline({ d = expensesDataSummary.default, date = null, onlyYtd = false }) {
   const [data, setData]     = useState(d);
   const [loading, setLoading] = useState(false);
   const [error, setError]   = useState(null);
   const [canHover, setCanHover] = useState(false);
+  const [expenseDetailsSelected, setExpenseDetailsSelected] = useState(null);
 
   useEffect(() => {
     setError(null);
@@ -503,6 +556,10 @@ export function ExpenseTimeline({ d = expensesDataSummary.default, date = null, 
 
   return (
     <div style={containerStyle}>
+      {expenseDetailsSelected && (
+        <ExpensDetailPanel data={expenseDetailsSelected} onClose={() => setExpenseDetailsSelected(null)} />
+      )}
+
        {/* Header */}
       <div style={headerStyle}>
         <div style={{
@@ -532,6 +589,7 @@ export function ExpenseTimeline({ d = expensesDataSummary.default, date = null, 
             isHovered={canHover && hoveredIndex === index}
             onHover={canHover ? () => setHoveredIndex(index) : undefined}
             onLeave={canHover ? () => setHoveredIndex(null) : undefined}
+            onExpenseClick={(expenseYearData) => setExpenseDetailsSelected(expenseYearData)}
           />
         ))}
       </div>
