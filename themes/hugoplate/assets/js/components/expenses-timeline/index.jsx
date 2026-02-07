@@ -113,7 +113,7 @@ function TopExpensesList({ expenses }) {
   );
 }
 
-function Tooltip({ totalExpenses, totalRevenue, netIncome, topExpenses, style }) {
+function Tooltip({ totalExpenses, totalRevenue, netIncome, netLoss, topExpenses, style }) {
   const tooltipContentStyle = {
     display: 'flex',
     flexDirection: 'column',
@@ -138,7 +138,6 @@ function Tooltip({ totalExpenses, totalRevenue, netIncome, topExpenses, style })
     fontWeight: 'bold',
     color: '#111827'
   };
-
   return (
     <div style={style}>
       <div style={tooltipContentStyle}>
@@ -148,8 +147,8 @@ function Tooltip({ totalExpenses, totalRevenue, netIncome, topExpenses, style })
         </div>
         <div style={summaryRowStyle}>
           <span style={labelStyle}>{t('saved')}:</span>
-          <strong style={{...valueStyle, color: netIncome >= 0 ? '#10b981' : '#ef4444'}}>
-            {formatCurrency(netIncome)}
+          <strong style={{...valueStyle, color: netIncome ? '#10b981' : '#ef4444'}}>
+            {netLoss && "-"}{formatCurrency(netIncome || netLoss)}
           </strong>
         </div>
         <div style={summaryRowStyle}>
@@ -164,7 +163,7 @@ function Tooltip({ totalExpenses, totalRevenue, netIncome, topExpenses, style })
 
 function ExpenseBar({data, index, isHovered, className, onHover, onLeave }) {
 
-  const { label, totalExpensePercentage, totalExpenseGoal, totalExpenses, totalRevenue, netIncome, topExpenses } = data;
+  const { label, totalExpensePercentage, totalExpenseGoal, totalExpenses, totalRevenue, netIncome, netLoss, topExpenses } = data;
   
   const safeTotalExpensePercentage = totalExpensePercentage ?? 0;
   const isOverGoal = safeTotalExpensePercentage > totalExpenseGoal;
@@ -380,8 +379,8 @@ function ExpenseBar({data, index, isHovered, className, onHover, onLeave }) {
         
         <div style={metricCardStyle}>
           <div style={metricIconStyle}><SavingsIcon /></div>
-          <div style={{...metricValueStyle, color: netIncome >= 0 ? '#10b981' : '#ef4444'}}>
-            {formatCurrency(netIncome)}
+          <div style={{...metricValueStyle, color: netIncome ? '#10b981' : '#ef4444'}}>
+            {netLoss && "-"}{formatCurrency(netIncome || netLoss)}
           </div>
            <div style={metricLabelStyle}>{t('netIncome')}</div>
         </div>
@@ -393,6 +392,7 @@ function ExpenseBar({data, index, isHovered, className, onHover, onLeave }) {
           totalExpenses={totalExpenses}
           totalRevenue={totalRevenue}
           netIncome={netIncome}
+          netLoss={netLoss}
           topExpenses={topExpenses}
           style={tooltipStyle}
         />
