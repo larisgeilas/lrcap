@@ -17,7 +17,8 @@ const translations = {
     overGoal: 'Over Goal',
     netIncome: 'Net Income',
     goal: 'Goal',
-    'Expense Details': 'Expense Details'
+    'Expense Details': 'Expense Details',
+    "Repair and Maintenance": "Repair and Maintenance",
   },
   lt: {
     annualExpenses: 'Metinės Išlaidos',
@@ -31,7 +32,8 @@ const translations = {
     overGoal: 'Viršyta Ribą',
     netIncome: 'Grynosios Pajamos',
     goal: 'Tikslas',
-    'Expense Details': 'Išlaidos Detaliau'
+    'Expense Details': 'Išlaidos Detaliau',
+    'Repair and Maintenance': 'Auto remontas'
   }
 };
 
@@ -163,7 +165,7 @@ function Tooltip({ totalExpenses, totalRevenue, netIncome, netLoss, topExpenses,
   );
 }
 
-function ExpenseBar({data, index, isHovered, className, onHover, onLeave, onExpenseClick }) {
+function ExpenseBar({data, index, isHovered, className, onHover, onLeave, onExpenseClick, compact = true }) {
 
   const { label, totalExpensePercentage, totalExpenseGoal, totalExpenses, totalRevenue, netIncome, netLoss, topExpenses } = data;
   
@@ -261,7 +263,7 @@ function ExpenseBar({data, index, isHovered, className, onHover, onLeave, onExpe
   const metricCardStyle = {
     backgroundColor: '#f9fafb',
     borderRadius: '8px',
-    padding: '12px',
+    padding: compact ? '0px' : '5px',
     textAlign: 'center'
   };
 
@@ -313,13 +315,13 @@ function ExpenseBar({data, index, isHovered, className, onHover, onLeave, onExpe
       onClick={() => onExpenseClick(data)}
     >
       {/* Header */}
-      <div style={headerStyle}>
+      {!compact && <div style={headerStyle}>
         <div style={yearStyle}>{label.toUpperCase()}</div>
         <div style={statusBadgeStyle}>
           {isOverGoal ? <TrendingDownIcon /> : <TrendingUpIcon />}
           <span>{isOverGoal ? t('overGoal') : t('onTrack')}</span>
         </div>
-      </div>
+      </div>}
 
       {/* Progress Section */}
       <div style={progressContainerStyle}>
@@ -369,23 +371,23 @@ function ExpenseBar({data, index, isHovered, className, onHover, onLeave, onExpe
       {/* Metrics Grid */}
       <div style={metricsGridStyle}>
         <div style={metricCardStyle}>
-          <div style={metricIconStyle}><MoneyIcon /></div>
+          {!compact && <div style={metricIconStyle}><MoneyIcon /></div>}
           <div style={metricValueStyle}>{formatCurrency(totalRevenue)}</div>
-          <div style={metricLabelStyle}>{t('revenue')}</div>
+          {!compact && <div style={metricLabelStyle}>{t('revenue')}</div>}
         </div>
         
         <div style={metricCardStyle}>
-          <div style={metricIconStyle}><ExpenseIcon /></div>
+          {!compact && <div style={metricIconStyle}><ExpenseIcon /></div>}
           <div style={metricValueStyle}>{formatCurrency(totalExpenses)}</div>
-         <div style={metricLabelStyle}>{t('expenses')}</div>
+         {!compact && <div style={metricLabelStyle}>{t('expenses')}</div>}
         </div>
         
         <div style={metricCardStyle}>
-          <div style={metricIconStyle}><SavingsIcon /></div>
+          {!compact && <div style={metricIconStyle}><SavingsIcon /></div>}
           <div style={{...metricValueStyle, color: netIncome ? '#10b981' : '#ef4444'}}>
             {netLoss && "-"}{formatCurrency(netIncome || netLoss)}
           </div>
-           <div style={metricLabelStyle}>{t('netIncome')}</div>
+           {!compact && <div style={metricLabelStyle}>{t('netIncome')}</div>}
         </div>
       </div>
 
@@ -452,7 +454,7 @@ const ExpensDetailPanel = ({ data, onClose, inactive }) => {
   );
 };
 
-export function ExpenseTimeline({ d = expensesDataSummary.default, date = null, onlyYtd = false, onlyYear = null }) {
+export function ExpenseTimeline({ d = expensesDataSummary.default, date = null, onlyYtd = false, onlyYear = null}) {
   const [data, setData]     = useState(d);
   const [loading, setLoading] = useState(false);
   const [error, setError]   = useState(null);
@@ -573,7 +575,7 @@ export function ExpenseTimeline({ d = expensesDataSummary.default, date = null, 
         </div>
         <div>
           <h2 style={titleStyle}>{t('annualExpenses')}</h2>
-          <p style={subtitleStyle}>{t('expenseTimeline')}{" "}{prettyDateLT(date)}</p>
+          <p style={subtitleStyle}>{prettyDateLT(date)}</p>
         </div>
       </div>
 
@@ -584,6 +586,7 @@ export function ExpenseTimeline({ d = expensesDataSummary.default, date = null, 
             key={yearData.label}
             data={yearData}
             index={index}
+            compact={yearData.label !== 'ytd'}
             className={isOlderThanCutoff(yearData.label) ? 'is-old-year' : ''}
             isHovered={canHover && hoveredIndex === index}
             onHover={canHover ? () => setHoveredIndex(index) : undefined}

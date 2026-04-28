@@ -1,0 +1,500 @@
+[
+  {
+    "Account": "Savings, SKU",
+    "Symbol": "EUR",
+    "Listing": "CURRENCY",
+    "Units": 45000.18,
+    "Price": 1,
+    "Value": 45000.18,
+    "savingsStart": "2025-05-28",
+    "savingsEnd": "2028-05-28",
+    "savingsIntrestRate": 0.03,
+    "growth": {
+      "spentAmount": 45000.18,
+      "currentValue": 45685.99,
+      "profit": 685.81,
+      "profitEur": 685.81,
+      "roi": 1.52,
+      "timeToMaturity": 761
+    }
+  },
+  {
+    "Account": "Crypto",
+    "Symbol": "BTC",
+    "Listing": "Stocks",
+    "Units": 0.0067,
+    "Price": 94318,
+    "Value": 631.93,
+    "ValueEur": 568.74,
+    "growth": {
+      "spentAmount": 631.93,
+      "spentAmountEur": 568.74,
+      "currentValue": 514.27,
+      "currentValueEur": 437.72,
+      "profit": -117.66,
+      "profitEur": -100.15,
+      "roi": -18.62
+    }
+  },
+  {
+    "Account": "III Pillar INVL",
+    "Symbol": "INVL",
+    "Listing": "Stocks",
+    "Units": 12174.9304,
+    "Price": 1.18,
+    "Value": 14383.46,
+    "growth": {
+      "spentAmount": 11956,
+      "currentValue": 14383.46,
+      "profit": 2427.46,
+      "profitEur": 2427.46,
+      "roi": 20.3
+    }
+  },
+  {
+    "Account": "III Pillar Luminor Fund",
+    "Symbol": "LMNRIII",
+    "Listing": "Stocks",
+    "Units": 3053.3781,
+    "Price": 1.24,
+    "Value": 3800,
+    "growth": {
+      "spentAmount": 3800,
+      "currentValue": 3999.93,
+      "profit": 199.93,
+      "profitEur": 199.93,
+      "roi": 5.26
+    }
+  },
+  {
+    "Account": "Invested Cash",
+    "Symbol": "EUR",
+    "Listing": "CURRENCY",
+    "Units": 58974.78,
+    "Price": 1,
+    "Value": 58974.78,
+    "growth": {
+      "accountsTotalUnusedCashEur": 55.24,
+      "accountsUnusedCashEur": 55.24,
+      "accountsUnusedCashUsd": 0,
+      "spentAmount": 60124.3,
+      "currentValue": 69398.28,
+      "currentValueUsd": 81535.68,
+      "profit": 9273.98,
+      "profitEur": 9273.98,
+      "roi": 15.42,
+      "accountsGrowth": {
+        "U******58": {
+          "spentAmount": 13653.14,
+          "currentValue": 16293.01,
+          "profit": 2639.87,
+          "profitEur": 2639.87,
+          "roi": 19.34
+        },
+        "U******29": {
+          "spentAmount": 46471.16,
+          "currentValue": 53105.27,
+          "profit": 6634.11,
+          "profitEur": 6634.11,
+          "roi": 14.28
+        }
+      },
+      "ibkr": {
+        "U******58": {
+          "cashReports": [
+            {
+              "accountId": "U******58",
+              "currency": "BASE_SUMMARY",
+              "endingCash": "51.670161734",
+              "endingCashSec": "51.670161734",
+              "endingCashCom": "0",
+              "slbNetCash": "51.670161734",
+              "slbNetCashSec": "51.670161734",
+              "slbNetCashCom": "0"
+            },
+            {
+              "accountId": "U******58",
+              "currency": "DKK",
+              "endingCash": "310.289999998",
+              "endingCashSec": "310.289999998",
+              "endingCashCom": "0",
+              "slbNetCash": "310.289999998",
+              "slbNetCashSec": "310.289999998",
+              "slbNetCashCom": "0"
+            },
+            {
+              "accountId": "U******58",
+              "currency": "EUR",
+              "endingCash": "10.147153934",
+              "endingCashSec": "10.147153934",
+              "endingCashCom": "0",
+              "slbNetCash": "10.147153934",
+              "slbNetCashSec": "10.147153934",
+              "slbNetCashCom": "0"
+            },
+            {
+              "accountId": "U******58",
+              "currency": "USD",
+              "endingCash": "0",
+              "endingCashSec": "0",
+              "endingCashCom": "0",
+              "slbNetCash": "0",
+              "slbNetCashSec": "0",
+              "slbNetCashCom": "0"
+            }
+          ],
+          "openPositions": [
+            {
+              "accountId": "U******58",
+              "currency": "EUR",
+              "assetCategory": "STK",
+              "symbol": "H1W",
+              "isin": "GB00BMHVL512",
+              "listingExchange": "IBIS",
+              "underlyingListingExchange": "",
+              "reportDate": "20260424",
+              "markPrice": "11.9",
+              "positionValue": "1999.2",
+              "openPrice": "11.857857143",
+              "costBasisPrice": "11.857857143",
+              "percentOfNAV": "12.63",
+              "fifoPnlUnrealized": "7.08",
+              "position": "168",
+              "livePrice": 11.9
+            },
+            {
+              "accountId": "U******58",
+              "currency": "EUR",
+              "assetCategory": "STK",
+              "symbol": "NOV",
+              "isin": "DK0062498333",
+              "listingExchange": "IBIS",
+              "underlyingListingExchange": "",
+              "reportDate": "20260424",
+              "markPrice": "34.62",
+              "positionValue": "1846.65",
+              "openPrice": "46.917936521",
+              "costBasisPrice": "46.917936521",
+              "percentOfNAV": "11.66",
+              "fifoPnlUnrealized": "-655.976193",
+              "position": "53.3405",
+              "livePrice": 34.62
+            },
+            {
+              "accountId": "U******58",
+              "currency": "USD",
+              "assetCategory": "STK",
+              "symbol": "AAPL",
+              "isin": "US0378331005",
+              "listingExchange": "NASDAQ",
+              "underlyingListingExchange": "",
+              "reportDate": "20260424",
+              "markPrice": "271.06",
+              "positionValue": "2717.65",
+              "openPrice": "201.171255137",
+              "costBasisPrice": "201.171255137",
+              "percentOfNAV": "14.65",
+              "fifoPnlUnrealized": "700.706996",
+              "position": "10.026",
+              "livePrice": 271.06
+            },
+            {
+              "accountId": "U******58",
+              "currency": "USD",
+              "assetCategory": "STK",
+              "symbol": "AMZN",
+              "isin": "US0231351067",
+              "listingExchange": "NASDAQ",
+              "underlyingListingExchange": "",
+              "reportDate": "20260424",
+              "markPrice": "263.99",
+              "positionValue": "527.98",
+              "openPrice": "177.000035",
+              "costBasisPrice": "177.000035",
+              "percentOfNAV": "2.85",
+              "fifoPnlUnrealized": "173.97993",
+              "position": "2",
+              "livePrice": 263.99
+            },
+            {
+              "accountId": "U******58",
+              "currency": "USD",
+              "assetCategory": "STK",
+              "symbol": "BRK B",
+              "isin": "US0846707026",
+              "listingExchange": "NYSE",
+              "underlyingListingExchange": "",
+              "reportDate": "20260424",
+              "markPrice": "469.32",
+              "positionValue": "2346.6",
+              "openPrice": "483.2060334",
+              "costBasisPrice": "483.2060334",
+              "percentOfNAV": "12.65",
+              "fifoPnlUnrealized": "-69.430167",
+              "position": "5",
+              "livePrice": 469.32
+            },
+            {
+              "accountId": "U******58",
+              "currency": "USD",
+              "assetCategory": "STK",
+              "symbol": "GOOG",
+              "isin": "US02079K1079",
+              "listingExchange": "NASDAQ",
+              "underlyingListingExchange": "",
+              "reportDate": "20260424",
+              "markPrice": "342.32",
+              "positionValue": "4806.28",
+              "openPrice": "159.853809676",
+              "costBasisPrice": "159.853809676",
+              "percentOfNAV": "25.90",
+              "fifoPnlUnrealized": "2561.884558",
+              "position": "14.0403",
+              "livePrice": 342.32
+            },
+            {
+              "accountId": "U******58",
+              "currency": "USD",
+              "assetCategory": "STK",
+              "symbol": "IBKR",
+              "isin": "US45841N1072",
+              "listingExchange": "NASDAQ",
+              "underlyingListingExchange": "",
+              "reportDate": "20260424",
+              "markPrice": "76.62",
+              "positionValue": "384.29",
+              "openPrice": "52.86842249",
+              "costBasisPrice": "52.86842249",
+              "percentOfNAV": "2.07",
+              "fifoPnlUnrealized": "119.128427",
+              "position": "5.0155",
+              "livePrice": 76.62
+            },
+            {
+              "accountId": "U******58",
+              "currency": "USD",
+              "assetCategory": "STK",
+              "symbol": "UNH",
+              "isin": "US91324P1021",
+              "listingExchange": "NYSE",
+              "underlyingListingExchange": "",
+              "reportDate": "20260424",
+              "markPrice": "354.92",
+              "positionValue": "3263.99",
+              "openPrice": "294.618032708",
+              "costBasisPrice": "294.618032708",
+              "percentOfNAV": "17.59",
+              "fifoPnlUnrealized": "554.564724",
+              "position": "9.1964",
+              "livePrice": 354.92
+            },
+            {
+              "accountId": "U******58",
+              "symbol": "BTC",
+              "isin": "BTC",
+              "position": 0.0067,
+              "openPrice": "84886.2",
+              "positionValue": "437.72",
+              "costBasisPrice": "568.74",
+              "currency": "EUR",
+              "markPrice": "65629",
+              "livePrice": 65629,
+              "fifoPnlUnrealized": "-100.15"
+            }
+          ]
+        },
+        "U******29": {
+          "cashReports": [
+            {
+              "accountId": "U******29",
+              "currency": "BASE_SUMMARY",
+              "endingCash": "3.56632511",
+              "endingCashSec": "3.56632511",
+              "endingCashCom": "0",
+              "slbNetCash": "3.56632511",
+              "slbNetCashSec": "3.56632511",
+              "slbNetCashCom": "0"
+            }
+          ],
+          "openPositions": [
+            {
+              "accountId": "U******29",
+              "currency": "EUR",
+              "assetCategory": "STK",
+              "symbol": "4GLD",
+              "isin": "DE000A0S9GB0",
+              "listingExchange": "IBIS",
+              "underlyingListingExchange": "",
+              "reportDate": "20260424",
+              "markPrice": "129.65",
+              "positionValue": "5186",
+              "openPrice": "98.4234725",
+              "costBasisPrice": "98.4234725",
+              "percentOfNAV": "12.09",
+              "fifoPnlUnrealized": "1249.0611",
+              "position": "40",
+              "livePrice": 129.65
+            },
+            {
+              "accountId": "U******29",
+              "currency": "EUR",
+              "assetCategory": "STK",
+              "symbol": "VWCE",
+              "isin": "IE00BK5BQT80",
+              "listingExchange": "IBIS2",
+              "underlyingListingExchange": "",
+              "reportDate": "20260424",
+              "markPrice": "153.6",
+              "positionValue": "36411.51",
+              "openPrice": "132.546508814",
+              "costBasisPrice": "132.546508814",
+              "percentOfNAV": "84.85",
+              "fifoPnlUnrealized": "4990.816642",
+              "position": "237.0541",
+              "livePrice": 153.6
+            },
+            {
+              "accountId": "U******29",
+              "currency": "EUR",
+              "assetCategory": "STK",
+              "symbol": "WDEF",
+              "isin": "IE0002Y8CX98",
+              "listingExchange": "LSEETF",
+              "underlyingListingExchange": "",
+              "reportDate": "20260424",
+              "markPrice": "30.54",
+              "positionValue": "1313.22",
+              "openPrice": "25.697906977",
+              "costBasisPrice": "25.697906977",
+              "percentOfNAV": "3.06",
+              "fifoPnlUnrealized": "208.21",
+              "position": "43",
+              "livePrice": 30.54
+            },
+            {
+              "accountId": "U******29",
+              "currency": "EUR",
+              "assetCategory": "FUND",
+              "symbol": "IE00B3L10570",
+              "isin": "IE00B3L10570",
+              "listingExchange": "",
+              "underlyingListingExchange": "",
+              "reportDate": "20260424",
+              "markPrice": "108.3776",
+              "positionValue": "10190.75",
+              "openPrice": "106.401680315",
+              "costBasisPrice": "106.401680315",
+              "percentOfNAV": "100.00",
+              "fifoPnlUnrealized": "185.8",
+              "position": "94.03",
+              "livePrice": 108.38
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Account": "Total",
+    "Symbol": 122221.61,
+    "growth": {
+      "spentAmount": 121449.22,
+      "currentValue": 133905.38,
+      "profit": 12487.03,
+      "profitEur": 12487.03,
+      "roi": 10.28
+    }
+  },
+  {
+    "Account": "House",
+    "Symbol": "EUR",
+    "Units": 1,
+    "AverageYearlyGrowth": 0.11,
+    "Price": 142593.11,
+    "PurchaseYear": 2017,
+    "growth": {
+      "spentAmount": 142593.11,
+      "currentValue": 364758.44,
+      "profit": 222165.33,
+      "profitEur": 222165.33,
+      "roi": 155.8
+    }
+  },
+  {
+    "Account": "Other N.T.",
+    "Symbol": "EUR",
+    "Units": 1,
+    "Price": 27000,
+    "AverageYearlyGrowth": 0.2,
+    "PurchaseYear": 2020,
+    "growth": {
+      "spentAmount": 27000,
+      "currentValue": 80621.57,
+      "profit": 53621.57,
+      "profitEur": 53621.57,
+      "roi": 198.6
+    }
+  },
+  {
+    "Account": "Car",
+    "Symbol": "EUR",
+    "Units": 1,
+    "AverageYearlyGrowth": -0.11,
+    "Price": 33960.29,
+    "PurchaseYear": 2020,
+    "growth": {
+      "spentAmount": 33960.29,
+      "currentValue": 16877.63,
+      "profit": -17082.66,
+      "profitEur": -17082.66,
+      "roi": -50.3
+    }
+  },
+  {
+    "Account": "Total Current Assets",
+    "Symbol": "EUR",
+    "Units": 1,
+    "Price": 11797.19,
+    "growth": {
+      "spentAmount": 11797.19,
+      "currentValue": 11797.19,
+      "profit": 0,
+      "profitEur": 0,
+      "roi": 0
+    }
+  },
+  {
+    "Account": "Current Total Net Worth",
+    "Symbol": "EUR",
+    "Price": 337572.2,
+    "PriceMinusLiabilities": 259969.07,
+    "Liabilities": 77603.13,
+    "growth": {
+      "spentAmount": 336799.81,
+      "currentValue": 607960.21,
+      "currentValueMinusLiabilities": 530357.08,
+      "profit": 193557.27,
+      "profitEur": 193557.27,
+      "roi": 80.51,
+      "adjustedRoi": 57.47
+    }
+  },
+  {
+    "Account": "Goal Net Worth",
+    "Symbol": "EUR",
+    "Goal": 1000000,
+    "growth": {
+      "spentAmount": 336799.81,
+      "currentValue": 607960.21,
+      "currentValueMinusLiabilities": 530357.08,
+      "profit": 193557.27,
+      "profitEur": 193557.27,
+      "roi": 80.51,
+      "adjustedRoi": 57.47
+    },
+    "goalPerformance": {
+      "requiredValue": 469642.92,
+      "goalAchievedPercentage": 53.04
+    }
+  }
+]

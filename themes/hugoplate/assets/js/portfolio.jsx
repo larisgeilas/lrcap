@@ -4,6 +4,7 @@ import { ExpenseTimeline } from "./components/expenses-timeline";
 import { GoalNetWorth } from "./components/goal-net-worth";
 import { AssetClasses } from "./components/asset-classes";
 import { Stocks } from "./components/stocks";
+import StocksPie from "./components/stocks-pie";
 
 
 const PortfolioApp = () => {
@@ -60,6 +61,11 @@ const PortfolioApp = () => {
       <div className="responsive-grid-1">
         <div>
           <AssetClasses />
+        </div>
+      </div>
+      <div className="responsive-grid-1">
+        <div>
+          <StocksPie />
         </div>
       </div>
       <div className="responsive-grid-1">

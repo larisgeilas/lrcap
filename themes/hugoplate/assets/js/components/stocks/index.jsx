@@ -311,7 +311,7 @@ export function Stocks ({ d = investmentData, date = null}) {
       );
   }, [data]);
 
-  //region 2️⃣ apply account & text filters in a memo  
+  //region 2️ apply account & text filters in a memo  
   const positions = useMemo(() => {
     return allPositions
       .filter(p => filterAcc === 'all' || p.accountId === filterAcc)
@@ -536,7 +536,7 @@ export function Stocks ({ d = investmentData, date = null}) {
           </div>
           <div>
             <h2 className="text-3xl font-bold text-gray-800">{t('Investment Portfolio')}</h2>
-            <p style={subtitleStyle}>{t('Open positions treemap visualization')}, {prettyDateLT(displayDate)}</p>
+            <p style={subtitleStyle}>{prettyDateLT(displayDate)}</p>
           </div>
         </div>
         
