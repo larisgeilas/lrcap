@@ -1,0 +1,50 @@
+{
+  "totalRevenue": 48251.03,
+  "totalExpenses": 22794.23,
+  "netIncome": 25456.8,
+  "netLoss": null,
+  "totalExpensePercentage": 47.24,
+  "totalExpenseGoal": 50,
+  "topExpenses": [
+    {
+      "expenseName": "Travel",
+      "expenseAmount": 5581.75
+    },
+    {
+      "expenseName": "Kindergarten",
+      "expenseAmount": 2524
+    },
+    {
+      "expenseName": "Groceries",
+      "expenseAmount": 2330.17
+    },
+    {
+      "expenseName": "Clothes",
+      "expenseAmount": 1795.48
+    },
+    {
+      "expenseName": "Car Loan",
+      "expenseAmount": 1619.56
+    },
+    {
+      "expenseName": "Dining",
+      "expenseAmount": 1220.86
+    },
+    {
+      "expenseName": "Mortgage Loan",
+      "expenseAmount": 1125.33
+    },
+    {
+      "expenseName": "Fuel",
+      "expenseAmount": 954.17
+    },
+    {
+      "expenseName": "Childcare",
+      "expenseAmount": 820.39
+    },
+    {
+      "expenseName": "Medical Expenses",
+      "expenseAmount": 522.25
+    }
+  ]
+}
