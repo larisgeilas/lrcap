@@ -69,7 +69,8 @@ export function ExpenseComparison({ data = DEFAULT_DATA, title, lang = 'lt' }) {
 		if (!svgRef.current || !chartData.length) return;
 
 		const height = 430;
-		const margin = { top: 50, right: 24, bottom: 70, left: 90 };
+		const isMobile = width < 640;
+		const margin = isMobile ? { top: 40, right: 8, bottom: 56, left: 20 } : { top: 50, right: 24, bottom: 70, left: 90 };
 		const innerWidth = Math.max(320, width - margin.left - margin.right);
 		const innerHeight = height - margin.top - margin.bottom;
 
