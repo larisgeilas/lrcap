@@ -1,0 +1,18 @@
+<div
+  id="expense-comparator-{{ .Ordinal }}"
+  class="expense-comparator"
+  data-date="{{ .Get "date" }}"
+></div>
+
+<script type="module">
+  document.addEventListener('DOMContentLoaded', function () {
+    const expenseEl = document.getElementById('expense-comparator-{{ .Ordinal }}');
+    if (window.preact && window.ExpenseComparison && expenseEl) {
+      const date = expenseEl.dataset.date;  // e.g. "2025-06-13"
+      window.preact.render(
+        window.preact.createElement(window.ExpenseComparison, { date } ),
+        expenseEl
+      );
+    }
+  });
+</script>

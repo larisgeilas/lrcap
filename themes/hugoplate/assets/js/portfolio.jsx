@@ -5,8 +5,8 @@ import { GoalNetWorth } from "./components/goal-net-worth";
 import { AssetClasses } from "./components/asset-classes";
 import { Stocks } from "./components/stocks";
 import StocksPie from "./components/stocks-pie";
-// import ExpenseComparison from "./components/expense-comparison";
-// import OneYearExpenseShowUp from "./components/expense-comparison/one-year";
+import ExpenseComparison from "./components/expense-comparison";
+import OneYearExpenseShowUp from "./components/expense-comparison/one-year";
 
 
 const PortfolioApp = () => {
@@ -75,7 +75,7 @@ const PortfolioApp = () => {
           <Stocks />
         </div>
       </div>
-      {/* <div className="responsive-grid-1">
+      <div className="responsive-grid-1">
         <div>
           <ExpenseComparison />
         </div>
@@ -83,7 +83,7 @@ const PortfolioApp = () => {
         <div>
           <OneYearExpenseShowUp />
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

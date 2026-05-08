@@ -4,6 +4,8 @@ import { GoalExpense } from './components/goal-expense';
 import { Goal } from './components/goal';
 import { Stocks} from './components/stocks';
 import { ExpenseTimeline } from './components/expenses-timeline';
+import { ExpenseComparison } from './components/expense-comparison';
+// import OneYearExpenseShowUp from './components/expenses-comparison/one-year';
 import StocksPie from './components/stocks-pie';
 
 if (typeof window !== 'undefined') {
@@ -14,4 +16,6 @@ if (typeof window !== 'undefined') {
   window.Stocks = Stocks;
   window.StocksPie = StocksPie;
   window.ExpenseTimeline = ExpenseTimeline
+  window.ExpenseComparison = ExpenseComparison
+  // window.OneYearExpenseShowUp = OneYearExpenseShowUp
 }
