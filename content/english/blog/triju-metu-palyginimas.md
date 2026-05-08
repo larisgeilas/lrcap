@@ -17,7 +17,7 @@ twitter_card: "summary_large_image"
 twitter_image: "/images/gallery/pl.png"
 ---
 
-# Kaip man sekasi šiais 2026-aisiais ir ankstesniais metais
+## Kaip man sekasi šiais 2026-aisiais ir ankstesniais metais
 
 Savo finansus aktyviai seku jau trejus metus. Kiekvieną mėnesį suskaičiuoju visas transakcijas, įplaukas ir investicijas iki paskutinio cento. Tai pradėjau daryti supratęs, kad per daug išleidžiu ir per mažai investuoju. Kad suprasčiau, kiek iš tikrųjų galiu sau leisti investuoti, man reikėjo įrankio, kuris padėtų matyti realią finansinę situaciją.
 
@@ -25,13 +25,13 @@ Turiu ne vieną banko sąskaitą ir nemažai skirtingų išlaidų krepšelių. T
 
 Kad visa tai galėčiau sekti, susikūriau savo ataskaitų sistemą ir panaudojau nemokamą įrankį GnuCash kiekvieno mėnesio bankinėms transakcijoms surinkti. Automatizacija iš surinktų finansinių duomenų generuoja pjūvius, t. y. [portfolio komponentus](/portfolio/), kuriuos naudoju savo progresui stebėti.
 
-# Tikslai
+## Tikslai
 
 Šis blogas yra mano finansinė istorija: viskas, ką darau, ką perku ir ką uždirbu, matoma čia. Blogo įrašuose bandau aprašyti, kaip man sekasi. Tikslai nesikeičia: noriu valdyti milijono vertės turtą ir sumažinti savo išlaidas iki 50 %  nuo pajamų.
 
 Išsirinkau datą palyginimui. Imu visų metų balandžio 30-ąją ir pažiūrėkime, kokia situacija buvo tuo metu.
 
-# Palyginimas
+## Palyginimas
 
 Iš grafiko matyti, kad šiais metais pajamų yra 4 000 daugiau nei pernai, tačiau išlaidų buvo 8 000 daugiau nei pernai. Vadinasi, dar yra kur pasitempti: panašu, kad išlaidos didėja greičiau negu pajamos. Tačiau lyginant šiuos metus su 2024-aisiais, pajamos padidėjo net *72.8 %*, o kartu, palyginti su 2024 metais, man pavyko sumažinti išlaidų procentinę dalį.
 
@@ -39,6 +39,6 @@ Iš grafiko matyti, kad šiais metais pajamų yra 4 000 daugiau nei pernai, tač
 
 {{< expense-comparator >}}
 
-# Apibendrinimas
+## Apibendrinimas
 
 Kol kas tendencija atrodo nebloga: pajamos kyla, išlaidos irgi kyla. Reikia tikėtis, kad pavyks stabilizuoti išlaidų augimą.
