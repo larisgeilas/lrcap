@@ -75,15 +75,6 @@ const PortfolioApp = () => {
           <Stocks />
         </div>
       </div>
-      <div className="responsive-grid-1">
-        <div>
-          <ExpenseComparison />
-        </div>
-        
-        <div>
-          <OneYearExpenseShowUp />
-        </div>
-      </div>
     </div>
   );
 };
